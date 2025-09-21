@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services | 1st Impression CV's</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    
+  /* Basic tab styling */
+  .tab-menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+
+  .tab-link {
+    padding: 10px 25px;
+    background-color: #eee;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  }
+
+  .tab-link:hover {
+    background-color: #1D74FF;
+    color: #fff;
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(29, 116, 255, 0.2);
+  }
+
+  .tab-link.active {
+    background-color: #1D74FF;
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 8px 18px rgba(29, 116, 255, 0.25);
+  }
+
+  .tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease-in-out;
+  }
+
+  .tab-content.active {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Service Cards */
+  .card-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .service-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: scale(1);
+  }
+
+  .service-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+  }
+
+  .service-card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #003366;
+  }
+
+  .service-card p {
+    color: #444;
+    font-size: 0.95rem;
+  }
+
+  .services-page {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .services-page h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+</style>
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+ <header>
+  <div class="header-container">
+    <div class="logo">
+      <h1>1st Impression CV's</h1>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <!-- SERVICES -->
+  <section class="services-page">
+    <h2>Our Services</h2>
+
+    <!-- Tabs -->
+    <div class="tab-menu">
+      <button class="tab-link active" data-tab="personal">👤 Personal Services</button>
+      <button class="tab-link" data-tab="business">🏢 Business Services</button>
+      <button class="tab-link" data-tab="web">💻 Web Design Services</button>
+    </div>
+
+    <!-- PERSONAL SERVICES -->
+    <div id="personal" class="tab-content active">
+      <div class="card-grid">
+        <div class="service-card">
+          <h4>Professional CV Package – R199</h4>
+          <p>Customized CV tailored to your strengths, including a cover letter and executive summary.</p>
+        </div>
+        <div class="service-card">
+          <h4>LinkedIn Profile Optimization – R199</h4>
+          <p>Eye-catching LinkedIn profiles that boost visibility, branding, and engagement.</p>
+        </div>
+        <div class="service-card">
+          <h4>All-in-One Premium Package – R399</h4>
+          <p>Includes CV, cover letter, executive summary, and full LinkedIn optimization.</p>
+        </div>
+        <div class="service-card">
+          <h4>Portfolio Website for Professionals – R1499</h4>
+          <p>Modern one-page website showcasing your expertise, projects, and profile.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BUSINESS SERVICES -->
+    <div id="business" class="tab-content">
+      <div class="card-grid">
+        <div class="service-card">
+          <h4>Business Plan – R950</h4>
+          <p>Strategic document tailored for growth, funding, and operational clarity.</p>
+        </div>
+        <div class="service-card">
+          <h4>Company Profile – R850</h4>
+          <p>Professional company overview to showcase your services, vision, and values.</p>
+        </div>
+        <div class="service-card">
+          <h4>Business Proposal – R850</h4>
+          <p>Persuasive proposals designed to close deals and win partnerships.</p>
+        </div>
+        <div class="service-card">
+          <h4>Logo Design – R450</h4>
+          <p>Memorable logos customized to reflect your brand identity.</p>
+        </div>
+        <div class="service-card">
+          <h4>Flyers & Banners – R250</h4>
+          <p>Striking digital designs to market your products, services, or events.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- WEB DESIGN SERVICES -->
+    <div id="web" class="tab-content">
+      <div class="card-grid">
+        <div class="service-card">
+          <h4>Personal Portfolio Website – R1500</h4>
+          <p>Responsive one-pager for CVs, personal branding, and creative portfolios.</p>
+        </div>
+        <div class="service-card">
+          <h4>Startup/Business Website – R4500</h4>
+          <p>Multi-page site with services, contact, and about info – perfect for small businesses.</p>
+        </div>
+        <div class="service-card">
+          <h4>One-Pager Design – R2500</h4>
+          <p>Clean, concise landing page for events, campaigns, or announcements.</p>
+        </div>
+        <div class="service-card">
+          <h4>Website Revamp – R850</h4>
+          <p>Upgrade and modernize outdated websites to meet current design standards.</p>
+        </div>
+        <div class="service-card">
+          <h4>Maintenance & Updates – R500</h4>
+          <p>On-demand content edits, plugin updates, and troubleshooting.</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 1st Impression CV's. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JS for Tabs -->
+  <script>
+    const tabLinks = document.querySelectorAll('.tab-link');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        const target = document.getElementById(link.dataset.tab);
+
+        tabLinks.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+
+        link.classList.add('active');
+        target.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,399 @@
+/* ==== GENERAL RESET AND BASE ==== */
+
+.logo img {
+  height: 180px;
+  width: auto;
+  display: block;
+}
+
+.header-container {
+  height: 100px;
+  width: 100%;              /* Fill the header section */
+  max-width: none;          /* Remove max-width limit */
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-image: url('../images/background.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==== HERO SECTION ==== */
+
+.hero h1 {
+  font-size: 2.8rem;
+  color:#f64829;
+  text-align: center;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+/* ==== ABOUT SECTION ==== */
+
+.about {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.about h2,
+.about p,
+.about ul {
+  text-align: center;
+}
+
+.about ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.about p {
+  margin-bottom: 24px; /* Adds spacing between paragraphs */
+}
+
+/* ==== BENEFITS & CONTACT ==== */
+
+#benefits h2,
+#benefits ul,
+#contact h2,
+#contact p,
+#contact ul {
+  text-align: center;
+}
+
+#benefits ul,
+#contact ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* ==== HEADER AND NAVIGATION ==== */
+
+header {
+  background-color: #20344f;
+  padding: 0; /* Remove extra vertical padding */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 180px; /* Match your logo height */
+}
+
+.header-container {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;       /* Center vertically */
+  padding: 0 100px;
+  box-sizing: border-box;
+}
+.logo h1 {
+  font-size: 1.8rem;
+  color: #003366;
+}
+
+/* Navigation Menu */
+.main-nav ul li a {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #1D74FF;
+  border-radius: 12px;         /* Rounded square corners */
+  padding: 10px 22px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: 
+    background-color 0.3s ease-in-out,
+    color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.2s;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+  display: inline-block;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+  background-color: #1D74FF;
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(29, 116, 255, 0.18);
+  border-color: #1D74FF;
+}
+
+/* Responsive navigation */
+@media (max-width: 768px) {
+  .main-nav ul {
+    flex-direction: column; /* Stacks vertically on small screens */
+    gap: 10px;
+  }
+
+
+ .main-nav ul {
+  list-style: none;
+  display: flex;      /* Makes the buttons horizontal */
+  gap: 20px;          /* Space between buttons */
+  margin: 0;
+  padding: 0;
+}
+
+  .main-nav ul li a {
+    font-size: 1rem;
+  }
+}
+
+/* ==== SERVICES TABS ==== */
+
+.tab-menu {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* ==== TAB BUTTONS ==== */
+.tab-link {
+  padding: 10px 25px;
+  background: transparent;
+  color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+  overflow: unset;
+}
+
+.tab-link:hover {
+  background-color: #1D74FF;
+  color: #fff;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(29, 116, 255, 0.2);
+}
+
+.tab-link.active {
+  background-color: #1D74FF;
+  color: #fff;
+  border-color: #1D74FF;
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(29, 116, 255, 0.25);
+}
+
+/* ==== TAB CONTENT STYLING ==== */
+
+.tab-content {
+  display: none;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+  max-width: 1000px;
+  margin: 0 auto;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* ==== SECTION AND CARD STYLING ==== */
+
+section {
+  padding: 60px 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #003366;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  margin: 20px auto;
+  max-width: 700px;
+}
+
+.card h3 {
+  color: #1D74FF;
+  margin-bottom: 15px;
+}
+
+.card p {
+  line-height: 1.5;
+}
+
+/* ==== BUTTONS ==== */
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #1D74FF;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #155ecf;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ==== FOOTER ==== */
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f1f1f1;
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 60px;
+}
+
+/* Button Styling */
+.single-service-btn {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.single-service-btn button {
+  background-color: #003366;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.single-service-btn button:hover {
+  background-color: #0059b3;
+}
+
+/* Cards Grid */
+.service-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+.service-card {
+  background-color: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h3 {
+  margin-top: 0;
+  color: #003366;
+}
+
+.service-card p {
+  margin: 0.5rem 0 0 0;
+  line-height: 1.5;
+  color: #333;
+}
+
+.card-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: scale(1);
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+}
+
+.service-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #003366;
+}
+
+.service-card p {
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.services-page {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.services-page h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+/* Hide section by default */
+.hidden {
+  display: none;
+}
+
+/* Animation for tab content */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+html {
+  scroll-behavior: smooth;
+}
