@@ -4,152 +4,109 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Home | 1st Impression CV's</title>
-  <link rel="stylesheet" href="css/style.css" />
-  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @layer utilities {
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fadeIn {
+        animation: fadeIn 0.4s ease-in-out;
+      }
+    }
+  </style>
 </head>
-<body>
+<body class="font-sans leading-relaxed text-gray-800 bg-center bg-no-repeat bg-cover" style="background-image: url('images/background.svg')">
 
   <!-- Header -->
-<header>
-  <div class="header-container">
-    <div class="logo">
-       <img src="images/logo.svg" alt="1st Impression CV's Logo">
+  <header class="bg-[#20344f] shadow-md sticky top-0 z-50 h-[180px]">
+    <div class="flex justify-between items-center h-full px-10">
+      <div class="logo">
+        <img src="images/logo.svg" alt="1st Impression CV's Logo" class="h-[180px] w-auto block" />
+      </div>
+      <nav>
+        <ul class="flex gap-6">
+          <li><a href="index.html" class="text-white border-2 border-[#1D74FF] px-5 py-2 rounded-xl text-lg font-semibold shadow-sm transition hover:bg-[#1D74FF] hover:scale-105 hover:shadow-xl">Home</a></li>
+          <li><a href="about.html" class="text-white border-2 border-[#1D74FF] px-5 py-2 rounded-xl text-lg font-semibold shadow-sm transition hover:bg-[#1D74FF] hover:scale-105 hover:shadow-xl">About</a></li>
+          <li><a href="services.html" class="text-white border-2 border-[#1D74FF] px-5 py-2 rounded-xl text-lg font-semibold shadow-sm transition hover:bg-[#1D74FF] hover:scale-105 hover:shadow-xl">Services</a></li>
+          <li><a href="portfolio.html" class="text-white border-2 border-[#1D74FF] px-5 py-2 rounded-xl text-lg font-semibold shadow-sm transition hover:bg-[#1D74FF] hover:scale-105 hover:shadow-xl">Portfolio</a></li>
+          <li><a href="contact.html" class="text-white border-2 border-[#1D74FF] px-5 py-2 rounded-xl text-lg font-semibold shadow-sm transition hover:bg-[#1D74FF] hover:scale-105 hover:shadow-xl">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  </header>
 
   <!-- Hero Section -->
-<section class="hero">
-  <div class="container">
-    <h1>Your First Impression Starts Here</h1>
-    <p>Get noticed with a standout CV, optimized LinkedIn profile, and a sleek personal website.</p>
-   
-  </div>
-</section>
+  <section class="py-16 text-center">
+    <h1 class="text-[2.8rem] font-bold text-[#f64829] mb-4">Your First Impression Starts Here</h1>
+    <p class="text-xl text-gray-700">Get noticed with a standout CV, optimized LinkedIn profile, and a sleek personal website.</p>
+  </section>
 
   <!-- Services Tabs -->
-  <section id="services">
-    <h2>Our Services</h2>
+  <section id="services" class="py-16 max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-10 text-[#003366]">Our Services</h2>
 
     <!-- Tabs -->
-    <div class="tab-menu">
-      <button class="tab-link active" data-tab="personal">👤 Personal Services</button>
-      <button class="tab-link" data-tab="business">🏢 Business Services</button>
-      <button class="tab-link" data-tab="web">💻 Web Design Services</button>
+    <div class="flex justify-center flex-wrap gap-5 my-10">
+      <button class="tab-link active px-6 py-2 border-2 border-gray-300 rounded-full font-bold text-white bg-[#1D74FF] shadow-md transition hover:scale-105 hover:shadow-xl">👤 Personal</button>
+      <button class="tab-link px-6 py-2 border-2 border-gray-300 rounded-full font-bold text-gray-700 shadow-md transition hover:bg-[#1D74FF] hover:text-white hover:scale-105">🏢 Business</button>
+      <button class="tab-link px-6 py-2 border-2 border-gray-300 rounded-full font-bold text-gray-700 shadow-md transition hover:bg-[#1D74FF] hover:text-white hover:scale-105">💻 Web Design</button>
     </div>
 
     <!-- PERSONAL SERVICES -->
-    <div id="personal" class="tab-content active">
-      <div class="card-grid">
-        <div class="service-card">
-          <h4>Professional CV Package – R199</h4>
-          <p>Customized CV tailored to your strengths, including a cover letter and executive summary.</p>
-        </div>
-        <div class="service-card">
-          <h4>LinkedIn Profile Optimization – R199</h4>
-          <p>Eye-catching LinkedIn profiles that boost visibility, branding, and engagement.</p>
-        </div>
-        <div class="service-card">
-          <h4>All-in-One Premium Package – R399</h4>
-          <p>Includes CV, cover letter, executive summary, and full LinkedIn optimization.</p>
-        </div>
-        <div class="service-card">
-          <h4>Portfolio Website for Professionals – R1499</h4>
-          <p>Modern one-page website showcasing your expertise, projects, and profile.</p>
-        </div>
+    <div id="personal" class="tab-content active grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fadeIn">
+      <div class="service-card bg-white rounded-xl shadow-lg p-8 transition transform hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
+        <h4 class="text-xl font-semibold text-[#003366] mb-2">Professional CV Package – R199</h4>
+        <p class="text-gray-600">Customized CV tailored to your strengths, including a cover letter and executive summary.</p>
+      </div>
+      <div class="service-card bg-white rounded-xl shadow-lg p-8 transition transform hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
+        <h4 class="text-xl font-semibold text-[#003366] mb-2">LinkedIn Profile Optimization – R199</h4>
+        <p class="text-gray-600">Eye-catching LinkedIn profiles that boost visibility, branding, and engagement.</p>
+      </div>
+      <div class="service-card bg-white rounded-xl shadow-lg p-8 transition transform hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
+        <h4 class="text-xl font-semibold text-[#003366] mb-2">All-in-One Premium Package – R399</h4>
+        <p class="text-gray-600">Includes CV, cover letter, executive summary, and full LinkedIn optimization.</p>
+      </div>
+      <div class="service-card bg-white rounded-xl shadow-lg p-8 transition transform hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
+        <h4 class="text-xl font-semibold text-[#003366] mb-2">Portfolio Website – R1499</h4>
+        <p class="text-gray-600">Modern one-page website showcasing your expertise, projects, and profile.</p>
       </div>
     </div>
-
-    <!-- BUSINESS SERVICES -->
-    <div id="business" class="tab-content">
-      <div class="card-grid">
-        <div class="service-card">
-          <h4>Business Plan – R950</h4>
-          <p>Strategic document tailored for growth, funding, and operational clarity.</p>
-        </div>
-        <div class="service-card">
-          <h4>Company Profile – R850</h4>
-          <p>Professional company overview to showcase your services, vision, and values.</p>
-        </div>
-        <div class="service-card">
-          <h4>Business Proposal – R850</h4>
-          <p>Persuasive proposals designed to close deals and win partnerships.</p>
-        </div>
-        <div class="service-card">
-          <h4>Logo Design – R450</h4>
-          <p>Memorable logos customized to reflect your brand identity.</p>
-        </div>
-        <div class="service-card">
-          <h4>Flyers & Banners – R250</h4>
-          <p>Striking digital designs to market your products, services, or events.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- WEB DESIGN SERVICES -->
-    <div id="web" class="tab-content">
-      <div class="card-grid">
-        <div class="service-card">
-          <h4>Personal Portfolio Website – R1500</h4>
-          <p>Responsive one-pager for CVs, personal branding, and creative portfolios.</p>
-        </div>
-        <div class="service-card">
-          <h4>Startup/Business Website – R4500</h4>
-          <p>Multi-page site with services, contact, and about info – perfect for small businesses.</p>
-        </div>
-        <div class="service-card">
-          <h4>One-Pager Design – R2500</h4>
-          <p>Clean, concise landing page for events, campaigns, or announcements.</p>
-        </div>
-        <div class="service-card">
-          <h4>Website Revamp – R850</h4>
-          <p>Upgrade and modernize outdated websites to meet current design standards.</p>
-        </div>
-        <div class="service-card">
-          <h4>Maintenance & Updates – R500</h4>
-          <p>On-demand content edits, plugin updates, and troubleshooting.</p>
-        </div>
-      </div>
-    </div>
-
   </section>
 
   <!-- Benefits Section -->
-  <section id="benefits">
-    <h2>Why Choose Us?</h2>
-    <ul>
-      <li><strong>Industry Expertise:</strong> We stay updated on hiring trends and market standards.</li>
-      <li><strong>Tailored Content:</strong> Every project is uniquely crafted to your brand or career profile.</li>
-      <li><strong>Professional Branding:</strong> Build a confident, consistent, and professional image.</li>
-      <li><strong>Improved Visibility:</strong> Optimized profiles and websites improve search rankings.</li>
-      <li><strong>Client Satisfaction:</strong> We deliver high-quality results with quick turnaround.</li>
-    </ul>
+  <section id="benefits" class="bg-gray-50 py-16">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-8 text-[#003366]">Why Choose Us?</h2>
+      <ul class="space-y-3 text-lg text-gray-700 text-left">
+        <li>✅ <strong>Industry Expertise:</strong> We stay updated on hiring trends and market standards.</li>
+        <li>✅ <strong>Tailored Content:</strong> Every project is uniquely crafted to your brand or career profile.</li>
+        <li>✅ <strong>Professional Branding:</strong> Build a confident, consistent, and professional image.</li>
+        <li>✅ <strong>Improved Visibility:</strong> Optimized profiles and websites improve search rankings.</li>
+        <li>✅ <strong>Client Satisfaction:</strong> We deliver high-quality results with quick turnaround.</li>
+      </ul>
+    </div>
   </section>
 
   <!-- Contact CTA -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Ready to make your 1st Impression count? Let's get started!</p>
-    <ul>
+  <section id="contact" class="py-16 max-w-3xl mx-auto text-center px-4">
+    <h2 class="text-3xl font-bold mb-4 text-[#003366]">Contact Us</h2>
+    <p class="mb-6 text-gray-700">Ready to make your 1st Impression count? Let's get started!</p>
+    <ul class="space-y-2 mb-6 text-lg text-gray-700">
       <li><strong>Email:</strong> info@1stimpressioncvs.co.za</li>
       <li><strong>Phone/WhatsApp:</strong> 069 166 7645</li>
-      <li><strong>Location:</strong> Johannesbrug, South Africa</li>
+      <li><strong>Location:</strong> Johannesburg, South Africa</li>
     </ul>
-    <p><a href="https://wa.me/2781767715" target="_blank">📲 Message us on WhatsApp</a></p>
+    <a href="https://wa.me/2781767715" target="_blank" class="inline-block px-8 py-3 bg-green-500 text-white rounded-full font-bold text-lg transition hover:bg-green-600 hover:-translate-y-1 hover:shadow-lg">
+      📲 Message us on WhatsApp
+    </a>
   </section>
 
   <!-- Footer -->
-  <footer>  
-    <p>&copy; 2023 1st Impression CV's. All rights reserved.</p>
+  <footer class="bg-gray-800 text-white py-6 text-center text-sm mt-16">
+    &copy; 2023 1st Impression CV's. All rights reserved.
   </footer>
 
   <!-- Tab Switching Script -->
