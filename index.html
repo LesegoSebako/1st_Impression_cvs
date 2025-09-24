@@ -91,7 +91,8 @@
 
   <!-- Navigation -->
   <nav class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-screen-2xl px-4">
-    <div class="rounded-xl bg-white/90 backdrop-blur-sm shadow-lg p-3">
+    <div class="rounded-xl bg-white/40 backdrop-blur-sm shadow-lg p-3">
+      
       <div class="flex items-center justify-between">
         <a href="#home" class="flex items-center space-x-3">
         <div class="flex items-center space-x-3">
@@ -120,27 +121,29 @@
     </div>
   </nav>
 
-<!-- Hero Section with Continuous Scrolling Reviews -->
+<!-- Hero Section with Card-style Content -->
 <section id="home" class="relative min-h-screen flex items-center justify-center pt-16 pb-40">
-  <div class="absolute top-0 h-full w-full bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800"></div>
+  <div class="absolute top-0 h-full w-full bg-cover bg-center" style="background-image: url('images/Hero.jpg')"></div>
   <div class="absolute top-0 h-full w-full bg-black/40"></div>
   
-  <div class="max-w-4xl container relative mx-auto px-4 text-center">
-    <div class="flex flex-wrap items-center justify-center">
-      <div class="w-full px-4">
-        <h1 class="text-5xl lg:text-7xl font-black text-white mb-6 leading-tight">
-          Your First Impression Starts Here
-        </h1>
-        <p class="text-xl text-white/90 mb-8 mx-auto max-w-3xl">
-          Get noticed with a standout CV, optimized LinkedIn profile, and a sleek personal website that opens doors to your dream career.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#services" class="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors font-semibold text-lg">
-            Explore Services
-          </a>
-          <a href="#contact" class="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white/10 transition-colors font-semibold text-lg">
-            Contact Us
-          </a>
+  <div class="container relative mx-auto px-4">
+    <div class="flex justify-center">
+      <div class="bg-white/-0 backdrop-blur-sm rounded-2xl shadow-2xl p-8 md:p-12 border border-white/20 max-w-4xl w-full">
+        <div class="text-center">
+          <h1 class="text-4xl lg:text-6xl font-black text-white mb-6 leading-tight">
+            Your First Impression Starts Here
+          </h1>
+          <p class="text-lg lg:text-xl text-white/90 mb-8 mx-auto max-w-3xl">
+            Get noticed with a standout CV, optimized LinkedIn profile, and a sleek personal website that opens doors to your dream career.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#services" class="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors font-semibold text-lg">
+              Explore Services
+            </a>
+            <a href="#contact" class="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white/10 transition-colors font-semibold text-lg">
+              Contact Us
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -417,197 +420,563 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
+  
+  .hero-card {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .hero-card h1 {
+    font-size: 2.5rem;
+  }
 }
 </style>
 
-  <!-- Services Section -->
-  <section id="services" class="py-20 bg-white px-4">
-    <div class="container mx-auto max-w-7xl">
-      <div class="text-center mb-16">
-        <h2 class="text-5xl font-black text-gray-900 mb-4">Our Professional Services</h2>
-        <p class="text-2xl text-gray-600 max-w-3xl mx-auto">
-          Comprehensive career and business solutions designed to make your first impression count
-        </p>
+ <!-- Services Section - Consistent Pricing Table Sizes -->
+<section id="services" class="py-20 bg-white px-4">
+  <div class="container mx-auto max-w-7xl">
+    <div class="text-center mb-16">
+      <h2 class="text-5xl font-black text-gray-900 mb-4">Our Professional Services</h2>
+      <p class="text-2xl text-gray-600 max-w-3xl mx-auto">
+        Comprehensive career and business solutions designed to make your first impression count
+      </p>
+    </div>
+
+    <!-- Service Tabs -->
+    <div class="flex justify-center mb-12 flex-wrap gap-4">
+      <button class="tab-link active bg-indigo-600 text-white px-8 py-4 rounded-lg transition-colors font-semibold" data-tab="personal">
+        <i class="fas fa-user mr-2"></i> Personal Services
+      </button>
+      <button class="tab-link bg-gray-200 text-gray-800 px-8 py-4 rounded-lg transition-colors font-semibold" data-tab="business">
+        <i class="fas fa-building mr-2"></i> Business Services
+      </button>
+      <button class="tab-link bg-gray-200 text-gray-800 px-8 py-4 rounded-lg transition-colors font-semibold" data-tab="web">
+        <i class="fas fa-code mr-2"></i> Web Design
+      </button>
+    </div>
+
+    <!-- Tab Content Container -->
+    <div class="tab-content-container">
+      <!-- PERSONAL SERVICES TAB CONTENT - 3 items -->
+      <div id="personal" class="tab-content active">
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+          <!-- Professional CV Package -->
+          <div class="flex flex-col p-6 text-center text-gray-900 bg-white rounded-lg border border-gray-200 shadow-lg h-full">
+            <h3 class="mb-4 text-2xl font-semibold">Professional CV Package</h3>
+            <p class="font-light text-gray-500 mb-6">Customized CV tailored to your strengths</p>
+            <div class="flex justify-center items-baseline my-4">
+              <span class="mr-2 text-5xl font-extrabold">R199</span>
+              <span class="text-gray-500">one-time</span>
+            </div>
+            <ul role="list" class="mb-8 space-y-4 text-left flex-grow">
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Customized CV tailored to your strengths</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Professional cover letter</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Executive summary</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>ATS optimization</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>2 rounds of revisions</span>
+              </li>
+            </ul>
+            <a href="cv-package.html" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors inline-block mt-2 pb-5">Learn More →</a>
+
+            <a href="#contact" class="text-white bg-indigo-600 hover:bg-indigo-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors mt-auto">Get Started</a>
+          </div>
+      
+      
+
+          <!-- LinkedIn Optimization -->
+          <div class="flex flex-col p-6 text-center text-gray-900 bg-white rounded-lg border border-gray-200 shadow-lg h-full">
+            <h3 class="mb-4 text-2xl font-semibold">LinkedIn Profile Optimization</h3>
+            <p class="font-light text-gray-500 mb-6">Eye-catching LinkedIn profiles</p>
+            <div class="flex justify-center items-baseline my-4">
+              <span class="mr-2 text-5xl font-extrabold">R199</span>
+              <span class="text-gray-500">one-time</span>
+            </div>
+            <ul role="list" class="mb-8 space-y-4 text-left flex-grow">
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Profile headline optimization</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>About section rewriting</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Experience section enhancement</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Skills & endorsements optimization</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Profile visibility boost</span>
+              </li>
+            </ul>
+            <a href="linkedin-optimization.html" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors inline-block mt-2 pb-5">Learn More →</a>
+            <a href="#contact" class="text-white bg-indigo-600 hover:bg-indigo-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors mt-auto">Get Started</a>
+          </div>
+
+          <!-- Premium Package -->
+          <div class="flex flex-col p-6 text-center text-gray-900 bg-white rounded-lg border border-indigo-200 shadow-xl relative h-full">
+            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+              <span class="bg-indigo-600 text-white text-sm font-medium px-3 py-1 rounded-full">Most Popular</span>
+            </div>
+            <h3 class="mb-4 text-2xl font-semibold">All-in-One Premium Package</h3>
+            <p class="font-light text-gray-500 mb-6">Complete personal branding solution</p>
+            <div class="flex justify-center items-baseline my-4">
+              <span class="mr-2 text-5xl font-extrabold">R399</span>
+              <span class="text-gray-500">one-time</span>
+            </div>
+            <ul role="list" class="mb-8 space-y-4 text-left flex-grow">
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Full CV Package included</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>LinkedIn Pro optimization</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Cover letter & executive summary</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>3 rounds of revisions</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Priority support</span>
+              </li>
+            </ul>
+            <a href="all-in-one-premium.html" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors inline-block mt-2 pb-5">Learn More →</a>
+            <a href="#contact" class="text-white bg-indigo-600 hover:bg-indigo-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors mt-auto">Get Started</a>
+          </div>
+        </div>
       </div>
 
-      <!-- Service Tabs -->
-      <div class="flex justify-center mb-12 flex-wrap gap-4">
-        <button class="tab-link active bg-indigo-600 text-white px-8 py-4 rounded-lg transition-colors font-semibold" data-tab="personal">
-          <i class="fas fa-user mr-2"></i> Personal Services
-        </button>
-        <button class="tab-link bg-gray-200 text-gray-800 px-8 py-4 rounded-lg transition-colors font-semibold" data-tab="business">
-          <i class="fas fa-building mr-2"></i> Business Services
-        </button>
-        <button class="tab-link bg-gray-200 text-gray-800 px-8 py-4 rounded-lg transition-colors font-semibold" data-tab="web">
-          <i class="fas fa-code mr-2"></i> Web Design
-        </button>
+      <!-- BUSINESS SERVICES TAB CONTENT - 5 items -->
+      <div id="business" class="tab-content hidden">
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+          <!-- Business Plan -->
+          <div class="flex flex-col p-6 text-center text-gray-900 bg-white rounded-lg border border-gray-200 shadow-lg h-full">
+            <h3 class="mb-4 text-2xl font-semibold">Business Plan</h3>
+            <p class="font-light text-gray-500 mb-6">Strategic document for growth and funding</p>
+            <div class="flex justify-center items-baseline my-4">
+              <span class="mr-2 text-5xl font-extrabold">R949</span>
+              <span class="text-gray-500">one-time</span>
+            </div>
+            <ul role="list" class="mb-8 space-y-4 text-left flex-grow">
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Executive summary</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Market analysis</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Financial projections</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Marketing strategy</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Operational plan</span>
+              </li>
+            </ul>
+            <a href="business-plan.html" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors inline-block mt-2 pb-5">Learn More →</a>
+            <a href="#contact" class="text-white bg-indigo-600 hover:bg-indigo-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors mt-auto">Get Started</a>
+          </div>
+
+          <!-- Company Profile -->
+          <div class="flex flex-col p-6 text-center text-gray-900 bg-white rounded-lg border border-gray-200 shadow-lg h-full">
+            <h3 class="mb-4 text-2xl font-semibold">Company Profile</h3>
+            <p class="font-light text-gray-500 mb-6">Professional company overview</p>
+            <div class="flex justify-center items-baseline my-4">
+              <span class="mr-2 text-5xl font-extrabold">R849</span>
+              <span class="text-gray-500">one-time</span>
+            </div>
+            <ul role="list" class="mb-8 space-y-4 text-left flex-grow">
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Company history & mission</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Services/Products overview</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Team introduction</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Achievements & milestones</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Professional layout design</span>
+              </li>
+            </ul>
+            <a href="company-profile.html" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors inline-block mt-2 pb-5">Learn More →</a>
+            <a href="#contact" class="text-white bg-indigo-600 hover:bg-indigo-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors mt-auto">Get Started</a>
+          </div>
+
+          <!-- Business Proposal -->
+          <div class="flex flex-col p-6 text-center text-gray-900 bg-white rounded-lg border border-gray-200 shadow-lg h-full">
+            <h3 class="mb-4 text-2xl font-semibold">Business Proposal</h3>
+            <p class="font-light text-gray-500 mb-6">Persuasive proposals for deals</p>
+            <div class="flex justify-center items-baseline my-4">
+              <span class="mr-2 text-5xl font-extrabold">R849</span>
+              <span class="text-gray-500">one-time</span>
+            </div>
+            <ul role="list" class="mb-8 space-y-4 text-left flex-grow">
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Customized proposal writing</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Client needs analysis</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Solution presentation</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Pricing strategy</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Call to action optimization</span>
+              </li>
+            </ul>
+            <a href="business-proposal.html" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors inline-block mt-2 pb-5">Learn More →</a>
+            <a href="#contact" class="text-white bg-indigo-600 hover:bg-indigo-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors mt-auto">Get Started</a>
+          </div>
+
+          <!-- Logo Design -->
+          <div class="flex flex-col p-6 text-center text-gray-900 bg-white rounded-lg border border-gray-200 shadow-lg h-full">
+            <h3 class="mb-4 text-2xl font-semibold">Logo Design</h3>
+            <p class="font-light text-gray-500 mb-6">Memorable brand identity</p>
+            <div class="flex justify-center items-baseline my-4">
+              <span class="mr-2 text-5xl font-extrabold">R449</span>
+              <span class="text-gray-500">one-time</span>
+            </div>
+            <ul role="list" class="mb-8 space-y-4 text-left flex-grow">
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>3 initial concepts</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Unlimited revisions</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Vector file formats</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Color variations</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Brand guidelines</span>
+              </li>
+            </ul>
+            <a href="logo-design.html" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors inline-block mt-2 pb-5">Learn More →</a>
+            <a href="#contact" class="text-white bg-indigo-600 hover:bg-indigo-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors mt-auto">Get Started</a>
+          </div>
+
+          <!-- Flyers & Banners -->
+          <div class="flex flex-col p-6 text-center text-gray-900 bg-white rounded-lg border border-gray-200 shadow-lg h-full">
+            <h3 class="mb-4 text-2xl font-semibold">Flyers & Banners</h3>
+            <p class="font-light text-gray-500 mb-6">Striking digital designs</p>
+            <div class="flex justify-center items-baseline my-4">
+              <span class="mr-2 text-5xl font-extrabold">R249</span>
+              <span class="text-gray-500">one-time</span>
+            </div>
+            <ul role="list" class="mb-8 space-y-4 text-left flex-grow">
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Custom design concepts</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Print-ready files</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Digital formats included</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Quick turnaround</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Multiple size variations</span>
+              </li>
+            </ul>
+            <a href="flyers-banners.html" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors inline-block mt-2 pb-5">Learn More →</a>
+            <a href="#contact" class="text-white bg-indigo-600 hover:bg-indigo-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors mt-auto">Get Started</a>
+          </div>
+        </div>
       </div>
 
-      <!-- Service Cards -->
-      <!-- PERSONAL SERVICES -->
-      <div id="personal" class="tab-content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="service-card bg-white rounded-xl shadow-lg shadow-gray-500/10 p-6 border border-gray-100 flex flex-col justify-between">
-          <div>
-            <div class="w-14 h-14 bg-gradient-to-tr from-indigo-600 to-purple-600 rounded-full flex items-center justify-center mb-4">
-              <i class="fas fa-file-alt text-white text-xl"></i>
+      <!-- WEB DESIGN SERVICES TAB CONTENT - 5 items -->
+      <div id="web" class="tab-content hidden">
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+          <!-- Personal Portfolio Website -->
+          <div class="flex flex-col p-6 text-center text-gray-900 bg-white rounded-lg border border-gray-200 shadow-lg h-full">
+            <h3 class="mb-4 text-2xl font-semibold">Personal Portfolio Website</h3>
+            <p class="font-light text-gray-500 mb-6">Responsive one-pager for CVs</p>
+            <div class="flex justify-center items-baseline my-4">
+              <span class="mr-2 text-5xl font-extrabold">R1500</span>
+              <span class="text-gray-500">one-time</span>
             </div>
-            <h4 class="text-xl font-bold text-gray-900 mb-3">Professional CV Package – R199</h4>
-            <p class="text-gray-600 mb-4">Customized CV tailored to your strengths, including a cover letter and executive summary.</p>
+            <ul role="list" class="mb-8 space-y-4 text-left flex-grow">
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Responsive one-page design</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Portfolio showcase</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Contact integration</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Mobile optimized</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Basic SEO setup</span>
+              </li>
+            </ul>
+            <a href="personal-portfolio.html" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors inline-block mt-2 pb-5 pb-5">Learn More →</a>
+            <a href="#contact" class="text-white bg-indigo-600 hover:bg-indigo-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors mt-auto">Get Started</a>
           </div>
-          <a href="cv-package.html" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors inline-block mt-2">Learn More →</a>
-        </div>
 
-        <div class="service-card bg-white rounded-xl shadow-lg shadow-gray-500/10 p-6 border border-gray-100 flex flex-col justify-between">
-          <div>
-            <div class="w-14 h-14 bg-gradient-to-tr from-indigo-600 to-purple-600 rounded-full flex items-center justify-center mb-4">
-              <i class="fab fa-linkedin text-white text-xl"></i>
+          <!-- Business Website -->
+          <div class="flex flex-col p-6 text-center text-gray-900 bg-white rounded-lg border border-indigo-200 shadow-xl relative h-full">
+            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+              <span class="bg-indigo-600 text-white text-sm font-medium px-3 py-1 rounded-full">Popular</span>
             </div>
-            <h4 class="text-xl font-bold text-gray-900 mb-3">LinkedIn Optimization – R199</h4>
-            <p class="text-gray-600 mb-4">Eye-catching LinkedIn profiles that boost visibility, branding, and engagement.</p>
+            <h3 class="mb-4 text-2xl font-semibold">Startup/Business Website</h3>
+            <p class="font-light text-gray-500 mb-6">Multi-page professional website</p>
+            <div class="flex justify-center items-baseline my-4">
+              <span class="mr-2 text-5xl font-extrabold">R4500</span>
+              <span class="text-gray-500">one-time</span>
+            </div>
+            <ul role="list" class="mb-8 space-y-4 text-left flex-grow">
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>5+ page website</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Content management system</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Contact forms & booking</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Blog integration</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Google Analytics setup</span>
+              </li>
+            </ul>
+            <a href="startup-business.html" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors inline-block mt-2 pb-5">Learn More →</a>
+            <a href="#contact" class="text-white bg-indigo-600 hover:bg-indigo-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors mt-auto">Get Started</a>
           </div>
-          <a href="linkedin-optimization.html" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors inline-block mt-2">Learn More →</a>
-        </div>
 
-        <div class="service-card bg-white rounded-xl shadow-lg shadow-gray-500/10 p-6 border border-gray-100 flex flex-col justify-between">
-          <div>
-            <div class="w-14 h-14 bg-gradient-to-tr from-indigo-600 to-purple-600 rounded-full flex items-center justify-center mb-4">
-              <i class="fas fa-star text-white text-xl"></i>
+          <!-- One-Pager Design -->
+          <div class="flex flex-col p-6 text-center text-gray-900 bg-white rounded-lg border border-gray-200 shadow-lg h-full">
+            <h3 class="mb-4 text-2xl font-semibold">One-Pager Design</h3>
+            <p class="font-light text-gray-500 mb-6">Clean landing page design</p>
+            <div class="flex justify-center items-baseline my-4">
+              <span class="mr-2 text-5xl font-extrabold">R2500</span>
+              <span class="text-gray-500">one-time</span>
             </div>
-            <h4 class="text-xl font-bold text-gray-900 mb-3">Premium Package – R399</h4>
-            <p class="text-gray-600 mb-4">Includes CV, cover letter, executive summary, and full LinkedIn optimization.</p>
+            <ul role="list" class="mb-8 space-y-4 text-left flex-grow">
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Single page design</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Event/campaign focused</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>High conversion optimization</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Mobile-first design</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Fast loading times</span>
+              </li>
+            </ul>
+            <a href="one-pager.html" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors inline-block mt-2 pb-5">Learn More →</a>
+            <a href="#contact" class="text-white bg-indigo-600 hover:bg-indigo-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors mt-auto">Get Started</a>
           </div>
-          <a href="all-in-one-premium.html" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors inline-block mt-2">Learn More →</a>
-        </div>
 
-        <div class="service-card bg-white rounded-xl shadow-lg shadow-gray-500/10 p-6 border border-gray-100 flex flex-col justify-between">
-          <div>
-            <div class="w-14 h-14 bg-gradient-to-tr from-indigo-600 to-purple-600 rounded-full flex items-center justify-center mb-4">
-              <i class="fas fa-laptop text-white text-xl"></i>
+          <!-- Website Revamp -->
+          <div class="flex flex-col p-6 text-center text-gray-900 bg-white rounded-lg border border-gray-200 shadow-lg h-full">
+            <h3 class="mb-4 text-2xl font-semibold">Website Revamp</h3>
+            <p class="font-light text-gray-500 mb-6">Modernize outdated websites</p>
+            <div class="flex justify-center items-baseline my-4">
+              <span class="mr-2 text-5xl font-extrabold">R850</span>
+              <span class="text-gray-500">one-time</span>
             </div>
-            <h4 class="text-xl font-bold text-gray-900 mb-3">Portfolio Website – R1499</h4>
-            <p class="text-gray-600 mb-4">Modern one-page website showcasing your expertise, projects, and profile.</p>
+            <ul role="list" class="mb-8 space-y-4 text-left flex-grow">
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Design modernization</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Mobile responsiveness</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Performance optimization</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Content updates</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Security enhancements</span>
+              </li>
+            </ul>
+            <a href="website-revamp.html" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors inline-block mt-2 pb-5">Learn More →</a>
+            <a href="#contact" class="text-white bg-indigo-600 hover:bg-indigo-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors mt-auto">Get Started</a>
           </div>
-          <a href="portfolio-website.html" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors inline-block mt-2">Learn More →</a>
-        </div>
-      </div>
 
-      <!-- BUSINESS SERVICES -->
-      <div id="business" class="tab-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="service-card bg-white rounded-xl shadow-lg shadow-gray-500/10 p-6 border border-gray-100 flex flex-col justify-between">
-          <div>
-            <div class="w-14 h-14 bg-gradient-to-tr from-green-600 to-emerald-600 rounded-full flex items-center justify-center mb-4">
-              <i class="fas fa-chart-line text-white text-xl"></i>
+          <!-- Maintenance & Updates -->
+          <div class="flex flex-col p-6 text-center text-gray-900 bg-white rounded-lg border border-gray-200 shadow-lg h-full">
+            <h3 class="mb-4 text-2xl font-semibold">Maintenance & Updates</h3>
+            <p class="font-light text-gray-500 mb-6">Ongoing website support</p>
+            <div class="flex justify-center items-baseline my-4">
+              <span class="mr-2 text-5xl font-extrabold">R500</span>
+              <span class="text-gray-500">/month</span>
             </div>
-            <h4 class="text-xl font-bold text-gray-900 mb-3">Business Plan – R950</h4>
-            <p class="text-gray-600 mb-4">Strategic document tailored for growth, funding, and operational clarity.</p>
+            <ul role="list" class="mb-8 space-y-4 text-left flex-grow">
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Regular content updates</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Plugin/software updates</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Security monitoring</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Backup management</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Technical support</span>
+              </li>
+            </ul>
+            <a href="maintenance-updates.html" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors inline-block mt-2 pb-5">Learn More →</a>
+            <a href="#contact" class="text-white bg-indigo-600 hover:bg-indigo-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors mt-auto">Get Started</a>
+            
           </div>
-          <a href="business-plan.html" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors inline-block mt-2">Learn More →</a>
-        </div>
-
-        <div class="service-card bg-white rounded-xl shadow-lg shadow-gray-500/10 p-6 border border-gray-100 flex flex-col justify-between">
-          <div>
-            <div class="w-14 h-14 bg-gradient-to-tr from-green-600 to-emerald-600 rounded-full flex items-center justify-center mb-4">
-              <i class="fas fa-building text-white text-xl"></i>
-            </div>
-            <h4 class="text-xl font-bold text-gray-900 mb-3">Company Profile – R850</h4>
-            <p class="text-gray-600 mb-4">Professional company overview to showcase your services, vision, and values.</p>
-          </div>
-          <a href="company-profile.html" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors inline-block mt-2">Learn More →</a>
-        </div>
-
-        <div class="service-card bg-white rounded-xl shadow-lg shadow-gray-500/10 p-6 border border-gray-100 flex flex-col justify-between">
-          <div>
-            <div class="w-14 h-14 bg-gradient-to-tr from-green-600 to-emerald-600 rounded-full flex items-center justify-center mb-4">
-              <i class="fas fa-file-contract text-white text-xl"></i>
-            </div>
-            <h4 class="text-xl font-bold text-gray-900 mb-3">Business Proposal – R850</h4>
-            <p class="text-gray-600 mb-4">Persuasive proposals designed to close deals and win partnerships.</p>
-          </div>
-          <a href="business-proposal.html" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors inline-block mt-2">Learn More →</a>
-        </div>
-
-        <div class="service-card bg-white rounded-xl shadow-lg shadow-gray-500/10 p-6 border border-gray-100 flex flex-col justify-between">
-          <div>
-            <div class="w-14 h-14 bg-gradient-to-tr from-green-600 to-emerald-600 rounded-full flex items-center justify-center mb-4">
-              <i class="fas fa-palette text-white text-xl"></i>
-            </div>
-            <h4 class="text-xl font-bold text-gray-900 mb-3">Logo Design – R450</h4>
-            <p class="text-gray-600 mb-4">Memorable logos customized to reflect your brand identity.</p>
-          </div>
-          <a href="logo-design.html" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors inline-block mt-2">Learn More →</a>
-        </div>
-
-        <div class="service-card bg-white rounded-xl shadow-lg shadow-gray-500/10 p-6 border border-gray-100 flex flex-col justify-between">
-          <div>
-            <div class="w-14 h-14 bg-gradient-to-tr from-green-600 to-emerald-600 rounded-full flex items-center justify-center mb-4">
-              <i class="fas fa-bullhorn text-white text-xl"></i>
-            </div>
-            <h4 class="text-xl font-bold text-gray-900 mb-3">Flyers & Banners – R250</h4>
-            <p class="text-gray-600 mb-4">Striking digital designs to market your products, services, or events.</p>
-          </div>
-          <a href="flyers-banners.html" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors inline-block mt-2">Learn More →</a>
-        </div>
-      </div>
-
-      <!-- WEB DESIGN SERVICES -->
-      <div id="web" class="tab-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="service-card bg-white rounded-xl shadow-lg shadow-gray-500/10 p-6 border border-gray-100 flex flex-col justify-between">
-          <div>
-            <div class="w-14 h-14 bg-gradient-to-tr from-blue-600 to-cyan-600 rounded-full flex items-center justify-center mb-4">
-              <i class="fas fa-laptop-code text-white text-xl"></i>
-            </div>
-            <h4 class="text-xl font-bold text-gray-900 mb-3">Portfolio Website – R1500</h4>
-            <p class="text-gray-600 mb-4">Responsive one-pager for CVs, personal branding, and creative portfolios.</p>
-          </div>
-          <a href="personal-portfolio.html" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors inline-block mt-2">Learn More →</a>
-        </div>
-
-        <div class="service-card bg-white rounded-xl shadow-lg shadow-gray-500/10 p-6 border border-gray-100 flex flex-col justify-between">
-          <div>
-            <div class="w-14 h-14 bg-gradient-to-tr from-blue-600 to-cyan-600 rounded-full flex items-center justify-center mb-4">
-              <i class="fas fa-rocket text-white text-xl"></i>
-            </div>
-            <h4 class="text-xl font-bold text-gray-900 mb-3">Business Website – R4500</h4>
-            <p class="text-gray-600 mb-4">Multi-page site with services, contact, and about info – perfect for small businesses.</p>
-          </div>
-          <a href="startup-business.html" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors inline-block mt-2">Learn More →</a>
-        </div>
-
-        <div class="service-card bg-white rounded-xl shadow-lg shadow-lg shadow-gray-500/10 p-6 border border-gray-100 flex flex-col justify-between">
-          <div>
-            <div class="w-14 h-14 bg-gradient-to-tr from-blue-600 to-cyan-600 rounded-full flex items-center justify-center mb-4">
-              <i class="fas fa-file-alt text-white text-xl"></i>
-            </div>
-            <h4 class="text-xl font-bold text-gray-900 mb-3">One-Pager Design – R2500</h4>
-            <p class="text-gray-600 mb-4">Clean, concise landing page for events, campaigns, or announcements.</p>
-          </div>
-          <a href="one-pager.html" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors inline-block mt-2">Learn More →</a>
-        </div>
-
-        <div class="service-card bg-white rounded-xl shadow-lg shadow-gray-500/10 p-6 border border-gray-100 flex flex-col justify-between">
-          <div>
-            <div class="w-14 h-14 bg-gradient-to-tr from-blue-600 to-cyan-600 rounded-full flex items-center justify-center mb-4">
-              <i class="fas fa-sync-alt text-white text-xl"></i>
-            </div>
-            <h4 class="text-xl font-bold text-gray-900 mb-3">Website Revamp – R850</h4>
-            <p class="text-gray-600 mb-4">Upgrade and modernize outdated websites to meet current design standards.</p>
-          </div>
-          <a href="website-revamp.html" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors inline-block mt-2">Learn More →</a>
-        </div>
-
-        <div class="service-card bg-white rounded-xl shadow-lg shadow-gray-500/10 p-6 border border-gray-100 flex flex-col justify-between">
-          <div>
-            <div class="w-14 h-14 bg-gradient-to-tr from-blue-600 to-cyan-600 rounded-full flex items-center justify-center mb-4">
-              <i class="fas fa-tools text-white text-xl"></i>
-            </div>
-            <h4 class="text-xl font-bold text-gray-900 mb-3">Maintenance & Updates – R500</h4>
-            <p class="text-gray-600 mb-4">On-demand content edits, plugin updates, and troubleshooting.</p>
-          </div>
-          <a href="#" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors inline-block mt-2">Learn More →</a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<script>
+// Tab switching functionality for services section only
+document.addEventListener('DOMContentLoaded', function() {
+  const tabs = document.querySelectorAll('#services .tab-link');
+  const contents = document.querySelectorAll('#services .tab-content');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.tab;
+
+      // Reset all tabs in services section only
+      tabs.forEach(t => {
+        t.classList.remove('bg-indigo-600', 'text-white', 'active');
+        t.classList.add('bg-gray-200', 'text-gray-800');
+      });
+
+      // Hide all content in services section only
+      contents.forEach(c => c.classList.remove('active'));
+      contents.forEach(c => c.classList.add('hidden'));
+
+      // Activate clicked tab
+      tab.classList.remove('bg-gray-200', 'text-gray-800');
+      tab.classList.add('bg-indigo-600', 'text-white', 'active');
+
+      // Show the target content
+      document.getElementById(target).classList.remove('hidden');
+      document.getElementById(target).classList.add('active');
+    });
+  });
+});
+</script>
+
+<style>
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Ensure consistent card heights */
+.flex-grow {
+  flex-grow: 1;
+}
+
+.mt-auto {
+  margin-top: auto;
+}
+</style>
 
   <!-- About Section -->
 <section id="about" class="py-20 relative">
@@ -616,8 +985,8 @@
   
   <div class="container mx-auto max-w-6xl px-4 relative z-10">
     <div class="text-center mb-16">
-      <h2 class="text-4xl font-black text-white mb-4">About Us</h2>
-      <p class="text-xl text-white/90 max-w-3xl mx-auto">Helping professionals make outstanding first impressions since 2023</p>
+      <h2 class="text-5xl font-black text-white mb-4">About Us</h2>
+      <p class="text-2xl text-white/90 max-w-3xl mx-auto">Helping professionals make outstanding first impressions since 2023</p>
     </div>
     
     <div class="bg-white/10 backdrop-blur-sm rounded-2xl shadow-2xl p-8 md:p-12 border border-white/20">
@@ -695,8 +1064,8 @@
   <section id="benefits" class="py-20 bg-white">
     <div class="container mx-auto max-w-7xl px-4">
       <div class="text-center mb-16">
-        <h2 class="text-4xl font-black text-gray-900 mb-4">Why Choose 1st Impression CV's?</h2>
-        <p class="text-xl text-gray-600">We deliver exceptional results that make a lasting impact</p>
+        <h2 class="text-5xl font-black text-gray-900 mb-4">Why Choose 1st Impression CV's?</h2>
+        <p class="text-2xl text-gray-600">We deliver exceptional results that make a lasting impact</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
