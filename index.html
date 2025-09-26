@@ -4,88 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Home | 1st Impression CV's</title>
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    
-    .service-card {
-      transition: all 0.3s ease;
-    }
-    
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    }
-    
-    .tab-link.active {
-      background-color: #4f46e5;
-      color: white;
-    }
-    
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    .contact-method {
-      animation: fadeInUp 0.6s ease forwards;
-    }
-    
-    .success-message {
-      display: none;
-      animation: fadeInUp 0.5s ease;
-    }
-    
-    .file-upload {
-      border: 2px dashed #d1d5db;
-      border-radius: 0.5rem;
-      padding: 1.5rem;
-      text-align: center;
-      transition: all 0.3s ease;
-    }
-    
-    .file-upload:hover {
-      border-color: #4f46e5;
-      background-color: #f8fafc;
-    }
-    
-    .file-upload.dragover {
-      border-color: #4f46e5;
-      background-color: #e0e7ff;
-    }
-    
-    .about-bg {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .about-bg::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 1;
-    }
-    
-    .about-content {
-      position: relative;
-      z-index: 2;
-    }
-  </style>
+   <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body class="font-sans text-gray-800">
 
@@ -102,7 +26,7 @@
       </a>
         
         <div class="hidden lg:flex items-center space-x-6">
-          <ul class="flex space-x-6 text-gray-700 font-medium">
+          <ul class="flex space-x-6 text-white font-medium">
             <li><a href="#home" class="hover:text-indigo-600 transition-colors font-semibold">Home</a></li>
             <li><a href="#services" class="hover:text-indigo-600 transition-colors font-semibold">Services</a></li>
             <li><a href="#about" class="hover:text-indigo-600 transition-colors font-semibold">About</a></li>
@@ -129,37 +53,7 @@
     <title>Card with Warp Effect</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Custom styles for the warp effect */
-        .warp-card {
-            transform-style: preserve-3d;
-            transition: transform 0.1s ease-out;
-            transform: perspective(1000px) rotateX(0) rotateY(0);
-        }
-        
-        /* Continuous scrolling animation */
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-        
-        .animate-scroll {
-            animation: scroll 30s linear infinite;
-        }
-        
-        .reviews-track:hover .animate-scroll {
-            animation-play-state: paused;
-        }
-        
-        /* Smooth transitions for all elements */
-        * {
-            transition: all 0.3s ease;
-        }
-    </style>
+
 </head>
 <body class="bg-gray-900">
 
@@ -416,105 +310,6 @@
         </div>
     </section>
 
-    <script>
-        // Warp effect for the card
-        const card = document.querySelector('.warp-card');
-        
-        // Mouse move event listener to the card
-        card.addEventListener('mousemove', function(e) {
-            const cardRect = card.getBoundingClientRect();
-            const cardWidth = cardRect.width;
-            const cardHeight = cardRect.height;
-            
-            // Calculate mouse position relative to card center
-            const mouseX = e.clientX - cardRect.left - cardWidth / 2;
-            const mouseY = e.clientY - cardRect.top - cardHeight / 2;
-            
-            // Calculate rotation based on mouse position
-            const rotateY = (mouseX / cardWidth) * 10; // Reduced intensity for subtle effect
-            const rotateX = -(mouseY / cardHeight) * 10;
-            
-            // Transformation with perspective
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-        });
-        
-        // Reset card position when mouse leaves
-        card.addEventListener('mouseleave', function() {
-            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
-        });
-        
-        // Pause scrolling reviews on hover
-        const reviewsTrack = document.getElementById('reviewsTrack');
-        reviewsTrack.addEventListener('mouseenter', function() {
-            this.style.animationPlayState = 'paused';
-        });
-        
-        reviewsTrack.addEventListener('mouseleave', function() {
-            this.style.animationPlayState = 'running';
-        });
-    </script>
-</body>
-</html>
-
-<style>
-.reviews-container {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-}
-
-.reviews-track {
-  display: flex;
-  width: max-content;
-  animation: scroll 30s linear infinite;
-}
-
-.review-item {
-  display: flex;
-  align-items: center;
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.review-item:last-child {
-  border-right: none;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-/* Pause animation on hover */
-.reviews-container:hover .reviews-track {
-  animation-play-state: paused;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .reviews-track {
-    animation-duration: 40s;
-  }
-  
-  .review-item {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  
-  .hero-card {
-    margin: 1rem;
-    padding: 1.5rem;
-  }
-  
-  .hero-card h1 {
-    font-size: 2.5rem;
-  }
-}
-</style>
-
  <!-- Services Section - Consistent Pricing Table Sizes -->
 <section id="services" class="py-20 bg-white px-4">
   <div class="container mx-auto max-w-7xl">
@@ -578,9 +373,7 @@
 
             <a href="#contact" class="text-white bg-indigo-600 hover:bg-indigo-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors mt-auto">Get Started</a>
           </div>
-      
-      
-
+         
           <!-- LinkedIn Optimization -->
           <div class="flex flex-col p-6 text-center text-gray-900 bg-white rounded-lg border border-gray-200 shadow-lg h-full">
             <h3 class="mb-4 text-2xl font-semibold">LinkedIn Profile Optimization</h3>
@@ -1013,60 +806,9 @@
   </div>
 </section>
 
-<script>
-// Tab switching functionality for services section only
-document.addEventListener('DOMContentLoaded', function() {
-  const tabs = document.querySelectorAll('#services .tab-link');
-  const contents = document.querySelectorAll('#services .tab-content');
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const target = tab.dataset.tab;
-
-      // Reset all tabs in services section only
-      tabs.forEach(t => {
-        t.classList.remove('bg-indigo-600', 'text-white', 'active');
-        t.classList.add('bg-gray-200', 'text-gray-800');
-      });
-
-      // Hide all content in services section only
-      contents.forEach(c => c.classList.remove('active'));
-      contents.forEach(c => c.classList.add('hidden'));
-
-      // Activate clicked tab
-      tab.classList.remove('bg-gray-200', 'text-gray-800');
-      tab.classList.add('bg-indigo-600', 'text-white', 'active');
-
-      // Show the target content
-      document.getElementById(target).classList.remove('hidden');
-      document.getElementById(target).classList.add('active');
-    });
-  });
-});
-</script>
-
-<style>
-.tab-content {
-  display: none;
-}
-
-.tab-content.active {
-  display: block;
-}
-
-/* Ensure consistent card heights */
-.flex-grow {
-  flex-grow: 1;
-}
-
-.mt-auto {
-  margin-top: auto;
-}
-</style>
-
   <!-- About Section -->
 <section id="about" class="py-20 relative">
-  <div class="absolute top-0 h-full w-full bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800"></div>
+  <div class="absolute top-0 h-full w-full bg-gradient-to-br from-green-900 via-purple-900 to-pink-800"></div>
   <div class="absolute top-0 h-full w-full bg-black/40"></div>
   
   <div class="container mx-auto max-w-6xl px-4 relative z-10">
@@ -1231,7 +973,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                         <div>
                             <h4 class="font-semibold">Our Location</h4>
-                            <p class="text-gray-300">Based in Johannesburg, serving clients nationwide</p>
+                            <p class="text-gray-300">Based in Johannesburg, serving clients internationally</p>
                             <p class="text-white">Johannesburg, South Africa</p>
                         </div>
                     </div>
@@ -1375,177 +1117,10 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </footer>
 
-  <!-- JavaScript -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Tab switching functionality
-      const tabs = document.querySelectorAll('.tab-link');
-      const contents = document.querySelectorAll('.tab-content');
-
-      tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-          const target = tab.dataset.tab;
-
-          // Reset all tabs
-          tabs.forEach(t => {
-            t.classList.remove('bg-indigo-600', 'text-white', 'active');
-            t.classList.add('bg-gray-200', 'text-gray-800');
-          });
-
-          // Hide all content
-          contents.forEach(c => c.classList.add('hidden'));
-
-          // Activate clicked tab
-          tab.classList.remove('bg-gray-200', 'text-gray-800');
-          tab.classList.add('bg-indigo-600', 'text-white', 'active');
-
-          // Show the target content
-          document.getElementById(target).classList.remove('hidden');
-        });
-      });
-
-      // Smooth scrolling
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          const targetId = this.getAttribute('href');
-          if(targetId === '#') return;
-          const targetElement = document.querySelector(targetId);
-          if(targetElement) {
-            window.scrollTo({
-              top: targetElement.offsetTop - 100,
-              behavior: 'smooth'
-            });
-          }
-        });
-      });
-
-      // File upload functionality
-      const fileUploadArea = document.getElementById('fileUploadArea');
-      const fileInput = document.getElementById('fileInput');
-      const browseButton = document.getElementById('browseButton');
-      const fileList = document.getElementById('fileList');
-
-      browseButton.addEventListener('click', () => {
-        fileInput.click();
-      });
-
-      fileInput.addEventListener('change', handleFileSelect);
-      
-      // Drag and drop functionality
-      ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-        fileUploadArea.addEventListener(eventName, preventDefaults, false);
-      });
-      
-      function preventDefaults(e) {
-        e.preventDefault();
-        e.stopPropagation();
-      }
-      
-      ['dragenter', 'dragover'].forEach(eventName => {
-        fileUploadArea.addEventListener(eventName, highlight, false);
-      });
-      
-      ['dragleave', 'drop'].forEach(eventName => {
-        fileUploadArea.addEventListener(eventName, unhighlight, false);
-      });
-      
-      function highlight() {
-        fileUploadArea.classList.add('dragover');
-      }
-      
-      function unhighlight() {
-        fileUploadArea.classList.remove('dragover');
-      }
-      
-      fileUploadArea.addEventListener('drop', handleDrop, false);
-      
-      function handleDrop(e) {
-        const dt = e.dataTransfer;
-        const files = dt.files;
-        handleFiles(files);
-      }
-      
-      function handleFileSelect(e) {
-        const files = e.target.files;
-        handleFiles(files);
-      }
-      
-      function handleFiles(files) {
-        if (files.length > 0) {
-          fileList.innerHTML = '<p class="text-sm font-semibold">Selected files:</p>';
-          fileList.classList.remove('hidden');
-          
-          for (let i = 0; i < files.length; i++) {
-            const file = files[i];
-            const fileItem = document.createElement('div');
-            fileItem.className = 'flex items-center justify-between bg-gray-100 p-2 rounded';
-            fileItem.innerHTML = `
-              <div class="flex items-center">
-                <i class="fas fa-file text-gray-500 mr-2"></i>
-                <span class="text-sm">${file.name}</span>
-              </div>
-              <button type="button" class="text-red-500 hover:text-red-700" data-index="${i}">
-                <i class="fas fa-times"></i>
-              </button>
-            `;
-            fileList.appendChild(fileItem);
-          }
-          
-          // Add event listeners to remove buttons
-          fileList.querySelectorAll('button').forEach(button => {
-            button.addEventListener('click', function() {
-              const index = this.getAttribute('data-index');
-              // In a real implementation, you would remove the file from the FileList
-              this.parentElement.remove();
-              if (fileList.children.length === 1) { // Only the title remains
-                fileList.classList.add('hidden');
-              }
-            });
-          });
-        }
-      }
-
-      // Contact form handling
-      const contactForm = document.getElementById('contactForm');
-      const successMessage = document.getElementById('successMessage');
-      
-      if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-          
-          // Simple form validation
-          const name = this.querySelector('input[type="text"]').value;
-          const email = this.querySelector('input[type="email"]').value;
-          const message = this.querySelector('textarea').value;
-          
-          if (!name || !email || !message) {
-            alert('Please fill in all required fields.');
-            return;
-          }
-          
-          // Show success message
-          successMessage.style.display = 'block';
-          
-          // Reset form
-          this.reset();
-          fileList.classList.add('hidden');
-          fileList.innerHTML = '';
-          
-          // Hide success message after 5 seconds
-          setTimeout(() => {
-            successMessage.style.display = 'none';
-          }, 5000);
-        });
-      }
-
-      // Add animation delays for contact methods
-      const contactMethods = document.querySelectorAll('.contact-method');
-      contactMethods.forEach((method, index) => {
-        method.style.animationDelay = `${index * 0.1}s`;
-      });
-    });
-  </script>
+  <script src="js/warp-effect.js"></script>
+    <script src="js/tabs.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 </html>

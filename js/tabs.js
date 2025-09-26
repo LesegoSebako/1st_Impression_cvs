@@ -48,3 +48,35 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+// Tab switching functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const tabs = document.querySelectorAll('.tab-link');
+    const contents = document.querySelectorAll('.tab-content');
+
+    if (tabs.length === 0) return;
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const target = tab.dataset.tab;
+
+            // Reset all tabs
+            tabs.forEach(t => {
+                t.classList.remove('bg-indigo-600', 'text-white', 'active');
+                t.classList.add('bg-gray-200', 'text-gray-800');
+            });
+
+            // Hide all content
+            contents.forEach(c => c.classList.add('hidden'));
+
+            // Activate clicked tab
+            tab.classList.remove('bg-gray-200', 'text-gray-800');
+            tab.classList.add('bg-indigo-600', 'text-white', 'active');
+
+            // Show the target content
+            const targetElement = document.getElementById(target);
+            if (targetElement) {
+                targetElement.classList.remove('hidden');
+            }
+        });
+    });
+});

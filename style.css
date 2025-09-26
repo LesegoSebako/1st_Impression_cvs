@@ -1,0 +1,175 @@
+/* ===== BASE STYLES ===== */
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    transition: all 0.3s ease;
+}
+
+/* ===== CARD COMPONENTS ===== */
+.service-card {
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.warp-card {
+    transform-style: preserve-3d;
+    transition: transform 0.1s ease-out;
+    transform: perspective(1000px) rotateX(0) rotateY(0);
+}
+
+/* ===== TAB COMPONENTS ===== */
+.tab-link.active {
+    background-color: #4f46e5;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* ===== LAYOUT UTILITIES ===== */
+.flex-grow {
+    flex-grow: 1;
+}
+
+.mt-auto {
+    margin-top: auto;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.contact-method {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.success-message {
+    display: none;
+    animation: fadeInUp 0.5s ease;
+}
+
+.animate-scroll {
+    animation: scroll 30s linear infinite;
+}
+
+.reviews-track:hover .animate-scroll {
+    animation-play-state: paused;
+}
+
+/* ===== FORM COMPONENTS ===== */
+.file-upload {
+    border: 2px dashed #d1d5db;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.file-upload:hover {
+    border-color: #4f46e5;
+    background-color: #f8fafc;
+}
+
+.file-upload.dragover {
+    border-color: #4f46e5;
+    background-color: #e0e7ff;
+}
+
+/* ===== ABOUT SECTION ===== */
+.about-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.about-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.about-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== REVIEWS COMPONENTS ===== */
+.reviews-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.reviews-track {
+    display: flex;
+    width: max-content;
+}
+
+.review-item {
+    display: flex;
+    align-items: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.review-item:last-child {
+    border-right: none;
+}
+
+/* Pause animation on hover */
+.reviews-container:hover .reviews-track {
+    animation-play-state: paused;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .reviews-track {
+        animation-duration: 40s;
+    }
+    
+    .review-item {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .hero-card {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .hero-card h1 {
+        font-size: 2.5rem;
+    }
+}
