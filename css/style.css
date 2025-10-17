@@ -317,3 +317,12 @@ html {
   transform: translateY(-2px);
   box-shadow: 0 10px 20px -5px rgba(79, 70, 229, 0.3);
 }
+
+/* Fix for Most Popular badge being cut off */
+.service-card.featured {
+  overflow: visible !important;
+}
+
+.service-card.featured .absolute {
+  z-index: 20;
+}
