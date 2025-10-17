@@ -318,11 +318,11 @@ html {
   box-shadow: 0 10px 20px -5px rgba(79, 70, 229, 0.3);
 }
 
-/* Fix for Most Popular badge being cut off */
-.service-card.featured {
+/* Fix for Most Popular badge being cut off - applies to ALL service cards */
+.service-card {
   overflow: visible !important;
 }
 
-.service-card.featured .absolute {
+.service-card .absolute {
   z-index: 20;
 }
