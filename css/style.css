@@ -327,3 +327,97 @@ html {
   z-index: 20;
 }
 
+/* Glow Effect for Service Tabs */
+.glow-on-hover {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000;
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+/* Customize for your active/inactive states */
+.glow-on-hover.active {
+    background: #4f46e5 !important;
+}
+
+.glow-on-hover.active:after {
+    background: #4f46e5 !important;
+}
+
+.glow-on-hover:not(.active):after {
+    background: #f3f4f6 !important; /* Matches your bg-gray-200 */
+}
+
+.glow-on-hover:not(.active) {
+    color: #374151 !important; /* Matches your text-gray-800 */
+    background: #f3f4f6 !important;
+}
+
+.glow-on-hover.active {
+    color: white !important;
+}
+
+/* Hover states */
+.glow-on-hover:hover:not(.active) {
+    transform: translateY(-2px);
+}
+
+.glow-on-hover.active:hover {
+    transform: translateY(-2px);
+    background: #4338ca !important;
+}
+
+.glow-on-hover.active:hover:after {
+    background: #4338ca !important;
+}
