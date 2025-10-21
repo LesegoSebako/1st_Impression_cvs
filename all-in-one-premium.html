@@ -5,14 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>All-in-One Premium Package | 1st Impression CV's</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body class="font-sans text-gray-800">
+<body class="font-sans text-gray-800 min-h-screen">
+  <!-- Gradient Background -->
+  <div class="fixed top-0 left-0 h-full w-full bg-gradient-to-br from-green-900 via-purple-900 to-orange-600 -z-10"></div>
 
   <!-- Header -->
   <header class="bg-white shadow-md fixed w-full top-0 left-0 z-50">
     <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
       <div class="flex items-center space-x-3">
         <img src="images/logo.svg" alt="1st Impression CV's Logo" class="h-16 w-auto">
+        <span class="font-bold text-sky-600 text-2xl">Impression CV's</span>
       </div>
       <nav>
         <ul class="flex space-x-6 text-gray-700 font-medium">
@@ -22,37 +26,58 @@
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main class="max-w-4xl mx-auto px-4 py-32">
-    <h1 class="text-4xl font-bold mb-6">All-in-One Premium Package – R399</h1>
-    <p class="mb-4">Includes CV, cover letter, executive summary, and full LinkedIn optimization.</p>
+  <!-- Main Content in Warp Card -->
+  <div class="pt-32 pb-20 px-4 relative z-10">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-center">
+        <!-- Card with warp effect -->
+        <div class="warp-card bg-white/10 backdrop-blur-sm rounded-2xl shadow-2xl p-8 md:p-12 border border-white/20 max-w-4xl w-full">
+          
+          <!-- Page Content -->
+          <h1 class="text-4xl font-bold mb-6 text-white">All-in-One Premium Package – R399</h1>
+          <p class="mb-4 text-white/90 text-lg">Includes CV, cover letter, executive summary, and full LinkedIn optimization.</p>
 
-    <!-- Expanded Text -->
-    <p class="mb-4">
-      The All-in-One Premium Package is a **comprehensive career branding solution** designed to give you a professional edge. This package combines everything needed to present yourself effectively to recruiters and clients.
-    </p>
-    <p class="mb-4">
-      You will receive a **fully customized CV** tailored to your strengths, a **personalized cover letter** that complements your application, and an **executive summary** that highlights your professional profile concisely. Additionally, we provide **complete LinkedIn optimization**, ensuring your online presence matches your professional brand.
-    </p>
-    <p class="mb-4">
-      Our service emphasizes **ATS-friendly formatting**, keyword optimization, and strategic content placement to maximize your chances of getting noticed. This package is perfect for professionals seeking a **complete, polished, and cohesive career presentation**.
-    </p>
+          <!-- Expanded Text -->
+          <div class="text-white/90 space-y-4 text-lg">
+            <p>
+              The All-in-One Premium Package is a <strong class="text-yellow-300">comprehensive career branding solution</strong> designed to give you a professional edge. This package combines everything needed to present yourself effectively to recruiters and clients.
+            </p>
+            <p>
+              You will receive a <strong class="text-yellow-300">fully customized CV</strong> tailored to your strengths, a <strong class="text-yellow-300">personalized cover letter</strong> that complements your application, and an <strong class="text-yellow-300">executive summary</strong> that highlights your professional profile concisely. Additionally, we provide <strong class="text-yellow-300">complete LinkedIn optimization</strong>, ensuring your online presence matches your professional brand.
+            </p>
+            <p>
+              Our service emphasizes <strong class="text-yellow-300">ATS-friendly formatting</strong>, keyword optimization, and strategic content placement to maximize your chances of getting noticed. This package is perfect for professionals seeking a <strong class="text-yellow-300">complete, polished, and cohesive career presentation</strong>.
+            </p>
+          </div>
 
-    <ul class="list-disc pl-6 mb-6 text-gray-700">
-      <li>Professional, ATS-friendly CV tailored to your skills and achievements.</li>
-      <li>Custom cover letter designed for your target role.</li>
-      <li>Executive summary for concise professional presentation.</li>
-      <li>Full LinkedIn profile optimization for online visibility.</li>
-      <li>Boost your chances of landing interviews and career opportunities.</li>
-    </ul>
+          <ul class="list-disc pl-6 my-6 text-white/90 space-y-2 text-lg">
+            <li>Professional, ATS-friendly CV tailored to your skills and achievements</li>
+            <li>Custom cover letter designed for your target role</li>
+            <li>Executive summary for concise professional presentation</li>
+            <li>Full LinkedIn profile optimization for online visibility</li>
+            <li>3 rounds of revisions to ensure perfection</li>
+            <li>Priority support for quick turnaround</li>
+            <li>Boost your chances of landing interviews and career opportunities</li>
+          </ul>
 
-    <a href="index.html#services" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-500">← Back to Services</a>
-  </main>
+          <div class="flex gap-4 mt-8">
+            <a href="index.html#services" class="inline-block border-2 border-white text-white px-6 py-3 rounded-lg hover:bg-white/10 transition-colors font-semibold">
+              ← Back to Services
+            </a>
+            <a href="index.html#contact" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors font-semibold">
+              Get Started
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-6 text-center">
+  <footer class="bg-gray-800 text-white py-6 text-center relative z-10">
     <p>&copy; 2023 1st Impression CV's. All rights reserved.</p>
   </footer>
 
+  <script src="js/warp-effect.js"></script>
 </body>
 </html>
