@@ -5,14 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Flyers & Banners | 1st Impression CV's</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body class="font-sans text-gray-800">
+<body class="font-sans text-gray-800 min-h-screen">
+  <!-- Gradient Background -->
+  <div class="fixed top-0 left-0 h-full w-full bg-gradient-to-br from-green-900 via-purple-900 to-orange-600 -z-10"></div>
 
   <!-- Header -->
   <header class="bg-white shadow-md fixed w-full top-0 left-0 z-50">
     <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
       <div class="flex items-center space-x-3">
         <img src="images/logo.svg" alt="1st Impression CV's Logo" class="h-16 w-auto">
+        <span class="font-bold text-sky-600 text-2xl">Impression CV's</span>
       </div>
       <nav>
         <ul class="flex space-x-6 text-gray-700 font-medium">
@@ -22,37 +26,56 @@
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main class="max-w-4xl mx-auto px-4 py-32">
-    <h1 class="text-4xl font-bold mb-6">Flyers & Banners – R249</h1>
-    <p class="mb-4">Striking digital designs to market your products, services, or events.</p>
+  <!-- Main Content in Warp Card -->
+  <div class="pt-32 pb-32 px-4 relative z-10">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-center">
+        <!-- Card with warp effect -->
+        <div class="warp-card bg-white/10 backdrop-blur-sm rounded-2xl shadow-2xl p-8 md:p-12 border border-white/20 max-w-4xl w-full">
+          
+          <!-- Page Content -->
+          <h1 class="text-4xl font-bold mb-6 text-white">Flyers & Banners – R249</h1>
+          <p class="mb-4 text-white/90 text-lg">Striking digital designs to market your products, services, or events.</p>
 
-    <!-- Expanded Text -->
-    <p class="mb-4">
-      Our Flyers & Banners service creates **visually compelling marketing materials** that grab attention and communicate your message effectively. Perfect for promoting products, services, events, or special campaigns.
-    </p>
-    <p class="mb-4">
-      Each design is **customized to reflect your brand identity** while remaining eye-catching and professional. We ensure your flyers and banners are optimized for both digital platforms and print.
-    </p>
-    <p class="mb-4">
-      From layout and typography to color schemes and imagery, every element is crafted to make your marketing materials stand out and engage your target audience.
-    </p>
+          <!-- Expanded Text -->
+          <div class="text-white/90 space-y-4 text-lg">
+            <p>
+              Our Flyers & Banners service creates <strong class="text-yellow-300">visually compelling marketing materials</strong> that grab attention and communicate your message effectively. Perfect for <strong class="text-yellow-300">promoting products, services, events</strong>, or special campaigns.
+            </p>
+            <p>
+              Each design is <strong class="text-yellow-300">customized to reflect your brand identity</strong> while remaining eye-catching and professional. We ensure your flyers and banners are <strong class="text-yellow-300">optimized for both digital platforms and print</strong>.
+            </p>
+            <p>
+              From layout and typography to color schemes and imagery, every element is <strong class="text-yellow-300">crafted to make your marketing materials stand out</strong> and engage your target audience.
+            </p>
+          </div>
 
-    <ul class="list-disc pl-6 mb-6 text-gray-700">
-      <li>Custom digital flyers and banners for marketing purposes.</li>
-      <li>Designed to capture attention and convey your message.</li>
-      <li>Aligned with your brand identity and style guide.</li>
-      <li>Optimized for both online and print formats.</li>
-      <li>Ideal for events, promotions, and product launches.</li>
-    </ul>
+          <ul class="list-disc pl-6 my-6 text-white/90 space-y-2 text-lg">
+            <li>Custom digital flyers and banners for marketing purposes</li>
+            <li>Designed to capture attention and convey your message</li>
+            <li>Aligned with your brand identity and style guide</li>
+            <li>Optimized for both online and print formats</li>
+            <li>Ideal for events, promotions, and product launches</li>
+          </ul>
 
-    <a href="index.html#services" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-500">← Back to Services</a>
-  </main>
+          <div class="flex gap-4 mt-8">
+            <a href="index.html#services" class="inline-block border-2 border-white text-white px-6 py-3 rounded-lg hover:bg-white/10 transition-colors font-semibold">
+              ← Back to Services
+            </a>
+            <a href="index.html#contact" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors font-semibold">
+              Get Started
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-6 text-center">
+  <footer class="bg-gray-800 text-white py-6 text-center fixed bottom-0 left-0 w-full z-10">
     <p>&copy; 2023 1st Impression CV's. All rights reserved.</p>
   </footer>
 
+  <script src="js/warp-effect.js"></script>
 </body>
 </html>

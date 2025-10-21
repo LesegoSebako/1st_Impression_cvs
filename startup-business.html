@@ -5,14 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Startup/Business Website | 1st Impression CV's</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body class="font-sans text-gray-800">
+<body class="font-sans text-gray-800 min-h-screen">
+  <!-- Gradient Background -->
+  <div class="fixed top-0 left-0 h-full w-full bg-gradient-to-br from-green-900 via-purple-900 to-orange-600 -z-10"></div>
 
   <!-- Header -->
   <header class="bg-white shadow-md fixed w-full top-0 left-0 z-50">
     <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
       <div class="flex items-center space-x-3">
         <img src="images/logo.svg" alt="1st Impression CV's Logo" class="h-16 w-auto">
+        <span class="font-bold text-sky-600 text-2xl">Impression CV's</span>
       </div>
       <nav>
         <ul class="flex space-x-6 text-gray-700 font-medium">
@@ -22,37 +26,56 @@
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main class="max-w-4xl mx-auto px-4 py-32">
-    <h1 class="text-4xl font-bold mb-6">Startup/Business Website – R4500</h1>
-    <p class="mb-4">Multi-page site with services, contact, and about info – perfect for small businesses.</p>
+  <!-- Main Content in Warp Card -->
+  <div class="pt-32 pb-32 px-4 relative z-10">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-center">
+        <!-- Card with warp effect -->
+        <div class="warp-card bg-white/10 backdrop-blur-sm rounded-2xl shadow-2xl p-8 md:p-12 border border-white/20 max-w-4xl w-full">
+          
+          <!-- Page Content -->
+          <h1 class="text-4xl font-bold mb-6 text-white">Startup/Business Website – R4449</h1>
+          <p class="mb-4 text-white/90 text-lg">Multi-page site with services, contact, and about info – perfect for small businesses.</p>
 
-    <!-- Expanded Text -->
-    <p class="mb-4">
-      A Startup/Business Website gives your company a **professional online presence** that builds trust with customers and helps you grow. Whether you’re launching a new venture or expanding your brand, this website is designed to communicate your services, values, and vision effectively.
-    </p>
-    <p class="mb-4">
-      With multiple pages, your site will have dedicated sections such as **Home, Services, About Us, and Contact**, ensuring visitors can easily navigate and find what they need. Each page is optimized for clarity and user experience, giving your business the credibility it deserves.
-    </p>
-    <p class="mb-4">
-      The design is **responsive**, meaning it adapts perfectly across desktops, tablets, and mobile devices, so your clients can access your business anytime, anywhere. 
-    </p>
+          <!-- Expanded Text -->
+          <div class="text-white/90 space-y-4 text-lg">
+            <p>
+              A Startup/Business Website gives your company a <strong class="text-yellow-300">professional online presence</strong> that builds trust with customers and helps you grow. Whether you're launching a new venture or expanding your brand, this website is designed to <strong class="text-yellow-300">communicate your services, values, and vision</strong> effectively.
+            </p>
+            <p>
+              With multiple pages, your site will have dedicated sections such as <strong class="text-yellow-300">Home, Services, About Us, and Contact</strong>, ensuring visitors can easily navigate and find what they need. Each page is optimized for <strong class="text-yellow-300">clarity and user experience</strong>, giving your business the credibility it deserves.
+            </p>
+            <p>
+              The design is <strong class="text-yellow-300">responsive</strong>, meaning it adapts perfectly across desktops, tablets, and mobile devices, so your clients can access your business anytime, anywhere.
+            </p>
+          </div>
 
-    <ul class="list-disc pl-6 mb-6 text-gray-700">
-      <li>Multi-page layout tailored for small businesses.</li>
-      <li>Pages include Home, Services, About Us, and Contact.</li>
-      <li>Responsive design for all screen sizes.</li>
-      <li>Showcases your brand, values, and offerings.</li>
-      <li>Built for professionalism, growth, and client engagement.</li>
-    </ul>
+          <ul class="list-disc pl-6 my-6 text-white/90 space-y-2 text-lg">
+            <li>Multi-page layout tailored for small businesses</li>
+            <li>Pages include Home, Services, About Us, and Contact</li>
+            <li>Responsive design for all screen sizes</li>
+            <li>Showcases your brand, values, and offerings</li>
+            <li>Built for professionalism, growth, and client engagement</li>
+          </ul>
 
-    <a href="index.html#services" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-500">← Back to Services</a>
-  </main>
+          <div class="flex gap-4 mt-8">
+            <a href="index.html#services" class="inline-block border-2 border-white text-white px-6 py-3 rounded-lg hover:bg-white/10 transition-colors font-semibold">
+              ← Back to Services
+            </a>
+            <a href="index.html#contact" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors font-semibold">
+              Get Started
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-6 text-center">
+  <footer class="bg-gray-800 text-white py-6 text-center fixed bottom-0 left-0 w-full z-10">
     <p>&copy; 2025 1st Impression CV's. All rights reserved.</p>
   </footer>
 
+  <script src="js/warp-effect.js"></script>
 </body>
 </html>
