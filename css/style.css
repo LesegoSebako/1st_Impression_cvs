@@ -424,9 +424,8 @@ html {
 
 @font-face {
   font-family: 'Handjet-Black';
-  src: url('/fonts/Handjet-SemiBold.woff2') format('woff2');
-  font-weight: 600;
+  src: url('../fonts/Handjet-SemiBold.woff2') format('woff2');
+  font-weight: 600; /* adjust if needed */
   font-style: normal;
   font-display: swap;
 }
-
