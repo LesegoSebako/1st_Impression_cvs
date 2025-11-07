@@ -110,7 +110,8 @@
   </script>
 
   <!-- Preload Critical Resources -->
-  <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+  <link rel="preload" href="https://cdn.tailwindcss.com" as="script" crossorigin>
+<script src="https://cdn.tailwindcss.com" async></script>
   <link rel="preload" href="js/warp-effect.js" as="script">
   
   <!-- External Resources -->
@@ -1303,10 +1304,10 @@ nav {
     </div>
   </footer>
 
-  <script src="js/warp-effect.js"></script>
-  <script src="js/tabs.js"></script>
-  <script src="js/forms.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/warp-effect.js" defer></script>
+  <script src="js/tabs.js" defer></script>
+  <script src="js/forms.js" defer></script>
+  <script src="js/main.js" defer></script>
   
   <!-- Update Copyright Year -->
   <script>
