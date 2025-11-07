@@ -435,10 +435,7 @@ html {
   font-display: swap;
 }
 
-
-
 /* ===== HERO IMAGE OPTIMIZATION ===== */
-/* Add these new styles at the end of your CSS file */
 
 /* Hero image container - doesn't affect warp-card */
 .hero-image-container {
@@ -524,14 +521,13 @@ html {
   opacity: 0;
 }
 
-/* Ensure warp-card stays on top and functional */
+/* warp-card stays on top and functional */
 .warp-card {
   z-index: 10;
   position: relative;
 }
 
 /* ===== PERFORMANCE UTILITIES ===== */
-/* Add these utility classes that won't conflict */
 
 .gpu-accelerated {
   transform: translateZ(0);
