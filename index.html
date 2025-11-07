@@ -164,12 +164,19 @@
   </nav>
 
   <!-- Hero Section with Card-style Content -->
-  <section id="home" class="relative min-h-screen flex items-center justify-center pt-16 pb-40 overflow-hidden">
-    <div class="absolute top-0 h-full w-full bg-cover bg-center" style="background-image: url('images/Hero.webp')"></div>
-    <div class="absolute top-0 h-full w-full bg-black/40"></div>
-    
-    <div class="container relative mx-auto px-4">
-      <div class="flex justify-center">
+<!-- Optimized Hero Section -->
+<section id="home" class="relative min-h-screen flex items-center justify-center pt-16 pb-40 overflow-hidden">
+  <!-- WebP with optimized JPEG fallback -->
+  <picture class="absolute top-0 h-full w-full">
+    <source srcset="images/Hero.webp" type="image/webp">
+    <img src="images/Hero-optimized.jpg" 
+         alt="Professional CV Writing Services Background"
+         class="h-full w-full object-cover object-center"
+         loading="eager"
+         width="1920" 
+         height="1080">
+         
+  </picture>
         <!-- Card with warp effect -->
         <div class="warp-card bg-white/10 backdrop-blur-sm rounded-2xl shadow-2xl p-8 md:p-12 border border-white/20 max-w-4xl w-full">
           <div class="text-center">
