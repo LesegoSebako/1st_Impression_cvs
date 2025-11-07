@@ -1112,6 +1112,7 @@ nav {
   </section>
 
 <!-- Contact Section -->
+<!-- Contact Section -->
 <section id="contact" class="py-20 bg-gray-900 text-white">
   <div class="container mx-auto max-w-7xl px-4">
     <div class="text-center mb-16">
@@ -1167,84 +1168,79 @@ nav {
       <div class="bg-white rounded-xl shadow-lg p-6 text-gray-900">
         <h3 class="text-2xl font-bold mb-6">Send Us a Message</h3>
         <form action="https://formsubmit.co/1stimpresscvs@gmail.com" method="POST" enctype="multipart/form-data">
-          <!-- Security & Spam Protection -->
+          <!-- FormSubmit Configuration -->
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_autoresponse" value="Thank you for contacting 1st Impression CV's! We'll get back to you within 24 hours.">
           <input type="hidden" name="_subject" value="New Contact Form Submission - 1st Impression CVs">
           <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_next" value="https://1stimpressioncvs.co.za/thank-you.html">
           
-          <!-- Your existing form fields continue here -->
-            <!-- Email formatting -->
-            <input type="hidden" name="_subject" value="New Contact Form Submission - 1st Impression CVs">
-            <input type="hidden" name="_template" value="table">
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label class="block text-sm font-semibold mb-2">Your Name *</label>
-                <input type="text" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500">
-              </div>
-              <div>
-                <label class="block text-sm font-semibold mb-2">Email Address *</label>
-                <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500">
-              </div>
-            </div>
-            
+          <!-- Form Fields -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label class="block text-sm font-semibold mb-2">Phone Number</label>
-              <input type="tel" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500">
+              <label class="block text-sm font-semibold mb-2">Your Name *</label>
+              <input type="text" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500">
             </div>
-            
             <div>
-              <label class="block text-sm font-semibold mb-2">Service Interested In</label>
-              <select name="service" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500">
-                <option value="">Select a service</option>
-                <option value="Professional CV Package">Professional CV Package</option>
-                <option value="LinkedIn Optimization">LinkedIn Optimization</option>
-                <option value="All-in-One Premium Package">All-in-One Premium Package</option>
-                <option value="Portfolio Website">Portfolio Website</option>
-                <option value="Business Plan">Business Plan</option>
-                <option value="Company Profile">Company Profile</option>
-                <option value="Business Proposal">Business Proposal</option>
-                <option value="Logo Design">Logo Design</option>
-                <option value="Flyers & Banners">Flyers & Banners</option>
-                <option value="Other">Other</option>
-              </select>
+              <label class="block text-sm font-semibold mb-2">Email Address *</label>
+              <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500">
             </div>
-            
-            <!-- File Upload Section -->
-            <div>
-              <label class="block text-sm font-semibold mb-2">Attach Files (Optional)</label>
-              <div class="file-upload" id="fileUploadArea">
-                <i class="fas fa-cloud-upload-alt text-3xl text-gray-400 mb-2" aria-hidden="true"></i>
-                <p class="text-gray-600">Drag & drop your CV and photo here or click to browse</p>
-                <p class="text-sm text-gray-500 mt-1">Supported formats: PDF, DOC, DOCX, JPG, PNG (Max: 10MB each)</p>
-                <input type="file" name="attachments" id="fileInput" class="hidden" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
-                <button type="button" id="browseButton" class="mt-3 bg-indigo-100 text-indigo-600 px-4 py-2 rounded-lg hover:bg-indigo-200 transition-colors">Browse Files</button>
-              </div>
-              <div id="fileList" class="mt-3 space-y-2 hidden">
-                <p class="text-sm font-semibold">Selected files:</p>
-              </div>
+          </div>
+          
+          <div class="mt-6">
+            <label class="block text-sm font-semibold mb-2">Phone Number</label>
+            <input type="tel" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500">
+          </div>
+          
+          <div class="mt-6">
+            <label class="block text-sm font-semibold mb-2">Service Interested In</label>
+            <select name="service" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500">
+              <option value="">Select a service</option>
+              <option value="Professional CV Package">Professional CV Package</option>
+              <option value="LinkedIn Optimization">LinkedIn Optimization</option>
+              <option value="All-in-One Premium Package">All-in-One Premium Package</option>
+              <option value="Portfolio Website">Portfolio Website</option>
+              <option value="Business Plan">Business Plan</option>
+              <option value="Company Profile">Company Profile</option>
+              <option value="Business Proposal">Business Proposal</option>
+              <option value="Logo Design">Logo Design</option>
+              <option value="Flyers & Banners">Flyers & Banners</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          
+          <!-- File Upload Section -->
+          <div class="mt-6">
+            <label class="block text-sm font-semibold mb-2">Attach Files (Optional)</label>
+            <div class="file-upload" id="fileUploadArea">
+              <i class="fas fa-cloud-upload-alt text-3xl text-gray-400 mb-2" aria-hidden="true"></i>
+              <p class="text-gray-600">Drag & drop your CV and photo here or click to browse</p>
+              <p class="text-sm text-gray-500 mt-1">Supported formats: PDF, DOC, DOCX, JPG, PNG (Max: 10MB each)</p>
+              <input type="file" name="attachments" id="fileInput" class="hidden" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+              <button type="button" id="browseButton" class="mt-3 bg-indigo-100 text-indigo-600 px-4 py-2 rounded-lg hover:bg-indigo-200 transition-colors">Browse Files</button>
             </div>
-            
-            <div>
-              <label class="block text-sm font-semibold mb-2">Your Message *</label>
-              <textarea name="message" rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" placeholder="Tell us about your requirements..."></textarea>
+            <div id="fileList" class="mt-3 space-y-2 hidden">
+              <p class="text-sm font-semibold">Selected files:</p>
             </div>
-            
-            <button type="submit" class="w-full bg-indigo-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-indigo-700 transition-colors">
-              Send Message
-            </button>
-            
-            <div id="successMessage" class="success-message bg-green-50 border border-green-200 text-green-700 p-4 rounded-lg mt-4">
-              <i class="fas fa-check-circle mr-2" aria-hidden="true"></i> Thank you! Your message has been sent. We'll get back to you soon.
-            </div>
-          </form>
-        </div>
+          </div>
+          
+          <div class="mt-6">
+            <label class="block text-sm font-semibold mb-2">Your Message *</label>
+            <textarea name="message" rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" placeholder="Tell us about your requirements..."></textarea>
+          </div>
+          
+          <button type="submit" class="w-full bg-indigo-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-indigo-700 transition-colors mt-6">
+            Send Message
+          </button>
+          
+          <div id="successMessage" class="success-message bg-green-50 border border-green-200 text-green-700 p-4 rounded-lg mt-4 hidden">
+            <i class="fas fa-check-circle mr-2" aria-hidden="true"></i> Thank you! Your message has been sent. We'll get back to you soon.
+          </div>
+        </form>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer class="bg-gray-800 text-white py-12">
