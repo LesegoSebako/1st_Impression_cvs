@@ -4,47 +4,121 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | 1st Impression CV's</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description" content="Get in touch with 1st Impression CV's for professional CV writing, LinkedIn optimization, and business services. Email, WhatsApp, and location contact details.">
+  
+  <!-- Critical CSS Inlined -->
+  <style>
+  body {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9fafb;
+    color: #374151;
+  }
+  
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+  }
+  
+  main {
+    padding-top: 8rem;
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
+  }
+  
+  footer {
+    background-color: #1f2937;
+    color: white;
+    padding: 1.5rem 0;
+    text-align: center;
+    margin-top: 4rem;
+  }
+  </style>
+  
+  <!-- Non-critical CSS -->
+  <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
 </head>
 <body class="font-sans text-gray-800 bg-gray-50">
 
   <header class="bg-white shadow-md fixed w-full top-0 left-0 z-50">
     <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
       <div class="flex items-center space-x-3">
-        <img src="images/logo.svg" alt="1st Impression CV's Logo" class="h-16 w-auto">
+        <img src="images/logo.svg" alt="1st Impression CV's Logo - Professional CV and career services" class="h-16 w-auto" loading="eager" width="64" height="64">
       </div>
       <nav>
         <ul class="flex space-x-6 text-gray-700 font-medium">
-          <li><a href="index.html" class="hover:text-blue-600">Home</a></li>
-          <li><a href="index.html#about" class="hover:text-blue-600">About</a></li>
-          <li><a href="index.html#services" class="hover:text-blue-600">Services</a></li>
-          <li><a href="index.html#portfolio" class="hover:text-blue-600">Portfolio</a></li>
-          <li><a href="contact.html" class="hover:text-blue-600 font-bold">Contact</a></li>
+          <li><a href="index.html" class="hover:text-blue-600 transition-colors">Home</a></li>
+          <li><a href="index.html#about" class="hover:text-blue-600 transition-colors">About</a></li>
+          <li><a href="index.html#services" class="hover:text-blue-600 transition-colors">Services</a></li>
+          <li><a href="index.html#portfolio" class="hover:text-blue-600 transition-colors">Portfolio</a></li>
+          <li><a href="contact.html" class="hover:text-blue-600 font-bold transition-colors">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main class="pt-32 max-w-3xl mx-auto px-4 text-center">
-    <h2 class="text-3xl font-bold mb-4">Get in Touch</h2>
-    <p class="mb-6 text-gray-700">
+    <h1 class="text-3xl font-bold mb-4">Get in Touch</h1>
+    <p class="mb-6 text-gray-700 text-lg">
       Ready to make your 1st Impression count? Reach out to us for a quote or to get started.
     </p>
 
-    <ul class="space-y-3 text-lg text-gray-700 mb-6">
-      <li><strong>Email:</strong> info@1stimpressioncvs.co.za</li>
-      <li><strong>Phone/WhatsApp:</strong> 069 166 7645</li>
-      <li><strong>Location:</strong> Johannesburg, South Africa</li>
-    </ul>
+    <div class="bg-white rounded-lg shadow-md p-6 mb-8 max-w-md mx-auto">
+      <ul class="space-y-4 text-gray-700 text-left">
+        <li class="flex items-center space-x-3">
+          <span class="bg-blue-100 p-2 rounded-full">📧</span>
+          <div>
+            <strong>Email:</strong><br>
+            <a href="mailto:info@1stimpressioncvs.co.za" class="text-blue-600 hover:text-blue-800 transition-colors">info@1stimpressioncvs.co.za</a>
+          </div>
+        </li>
+        <li class="flex items-center space-x-3">
+          <span class="bg-green-100 p-2 rounded-full">📱</span>
+          <div>
+            <strong>Phone/WhatsApp:</strong><br>
+            <a href="tel:0691667645" class="text-gray-900">069 166 7645</a>
+          </div>
+        </li>
+        <li class="flex items-center space-x-3">
+          <span class="bg-red-100 p-2 rounded-full">📍</span>
+          <div>
+            <strong>Location:</strong><br>
+            Johannesburg, South Africa
+          </div>
+        </li>
+      </ul>
+    </div>
 
-    <a href="https://wa.me/27691667645" target="_blank" class="inline-block bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600">
-      📲 Message us on WhatsApp
-    </a>
+    <div class="space-y-4">
+      <a href="https://wa.me/27691667645" target="_blank" rel="noopener noreferrer" class="inline-block bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors font-semibold">
+        📲 Message us on WhatsApp
+      </a>
+      <br>
+      <a href="mailto:info@1stimpressioncvs.co.za" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold">
+        ✉️ Send us an Email
+      </a>
+    </div>
   </main>
 
   <footer class="bg-gray-800 text-white py-6 text-center mt-16">
-    <p>&copy; 2025 1st Impression CV's. All rights reserved.</p>
+    <p>&copy; <span id="currentYear">2025</span> 1st Impression CV's. All rights reserved.</p>
   </footer>
 
+  <!-- Deferred JavaScript -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Update copyright year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
