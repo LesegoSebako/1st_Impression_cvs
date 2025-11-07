@@ -164,19 +164,14 @@
   </nav>
 
   <!-- Hero Section with Card-style Content -->
-<!-- Optimized Hero Section -->
-<section id="home" class="relative min-h-screen flex items-center justify-center pt-16 pb-40 overflow-hidden">
-  <!-- WebP with optimized JPEG fallback -->
-  <picture class="absolute top-0 h-full w-full">
-    <source srcset="images/Hero.webp" type="image/webp">
-    <img src="images/Hero-optimized.jpg" 
-         alt="Professional CV Writing Services Background"
-         class="h-full w-full object-cover object-center"
-         loading="eager"
-         width="1920" 
-         height="1080">
-         
-  </picture>
+  <section id="home" class="relative min-h-screen flex items-center justify-center pt-16 pb-40 overflow-hidden">
+  <div class="absolute top-0 h-full w-full bg-cover bg-center" 
+       style="background-image: url('images/Hero.jpg')" 
+       loading="eager"></div>
+  <div class="absolute top-0 h-full w-full bg-black/40"></div>
+  
+  <div class="container relative mx-auto px-4">
+    <div class="flex justify-center">
         <!-- Card with warp effect -->
         <div class="warp-card bg-white/10 backdrop-blur-sm rounded-2xl shadow-2xl p-8 md:p-12 border border-white/20 max-w-4xl w-full">
           <div class="text-center">
@@ -1061,7 +1056,7 @@
               <div>
                 <h4 class="font-semibold">Email Us</h4>
                 <p class="text-gray-300">We'll respond within 24 hours</p>
-                <a href="mailto:info@1stimpressioncvs.co.za" class="text-indigo-300 hover:text-white transition-colors">info@1stimpressioncvs.co.za</a>
+                <a href="mailto:info@1stimpressioncvs.co.za" class="text-indigo-300 hover:text-white transition-colors">info@1stimpressioncvs.</a>
               </div>  
             </div>
 
