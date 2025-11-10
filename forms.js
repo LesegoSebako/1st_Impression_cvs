@@ -31,14 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
             fileUploadArea.addEventListener('dragover', handleDragOver);
             fileUploadArea.addEventListener('dragleave', handleDragLeave);
             fileUploadArea.addEventListener('drop', handleFileDrop);
-            
-            // Keyboard accessibility for file upload area
-            fileUploadArea.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    fileInput.click();
-                }
-            });
         }
 
         // Form submission
@@ -46,14 +38,11 @@ document.addEventListener('DOMContentLoaded', function() {
             contactForm.addEventListener('submit', handleFormSubmit);
         }
 
-        // Real-time validation on blur
-        const inputs = contactForm.querySelectorAll('input[required], textarea[required], select[required]');
+        // Real-time validation
+        const inputs = contactForm.querySelectorAll('input[required], textarea[required]');
         inputs.forEach(input => {
             input.addEventListener('blur', validateField);
-            input.addEventListener('input', function() {
-                clearError(this.id + 'Error');
-                this.classList.remove('input-error', 'border-red-500');
-            });
+            input.addEventListener('input', clearError);
         });
     }
 
@@ -63,16 +52,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 const length = this.value.length;
                 messageCounter.textContent = `${length}/1000 characters`;
                 
-                if (length > 0 && length < 10) {
+                if (length < 10) {
                     showError('messageError', 'Message must be at least 10 characters');
-                    this.classList.add('input-error', 'border-red-500');
-                } else if (length >= 10) {
-                    clearError('messageError');
-                    this.classList.remove('input-error', 'border-red-500');
-                    this.classList.add('input-success', 'border-green-500');
                 } else {
                     clearError('messageError');
-                    this.classList.remove('input-error', 'border-red-500', 'input-success', 'border-green-500');
                 }
             });
         }
@@ -84,18 +67,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const value = field.value.trim();
         const fieldName = field.id;
 
-        // Clear previous styling
-        field.classList.remove('input-error', 'border-red-500', 'input-success', 'border-green-500');
-
         switch(fieldName) {
             case 'name':
                 if (value.length < 2) {
                     showError('nameError', 'Please enter your name (minimum 2 characters)');
-                    field.classList.add('input-error', 'border-red-500');
                     return false;
-                } else {
-                    clearError('nameError');
-                    field.classList.add('input-success', 'border-green-500');
                 }
                 break;
                 
@@ -103,37 +79,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 if (!emailRegex.test(value)) {
                     showError('emailError', 'Please enter a valid email address');
-                    field.classList.add('input-error', 'border-red-500');
                     return false;
-                } else {
-                    clearError('emailError');
-                    field.classList.add('input-success', 'border-green-500');
                 }
                 break;
                 
             case 'phone':
                 if (value && !/^[\+]?[0-9\s\-\(\)]{10,20}$/.test(value)) {
                     showError('phoneError', 'Please enter a valid phone number');
-                    field.classList.add('input-error', 'border-red-500');
                     return false;
-                } else if (value) {
-                    clearError('phoneError');
-                    field.classList.add('input-success', 'border-green-500');
                 }
                 break;
                 
             case 'message':
                 if (value.length < 10) {
                     showError('messageError', 'Message must be at least 10 characters');
-                    field.classList.add('input-error', 'border-red-500');
                     return false;
-                } else {
-                    clearError('messageError');
-                    field.classList.add('input-success', 'border-green-500');
                 }
                 break;
         }
         
+        clearError(fieldName + 'Error');
         return true;
     }
 
@@ -142,17 +107,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const requiredFields = contactForm.querySelectorAll('[required]');
         
         requiredFields.forEach(field => {
-            // Create and dispatch blur event to trigger validation
-            if (!field.value.trim()) {
-                showError(field.id + 'Error', `Please fill in ${field.previousElementSibling.textContent.toLowerCase()}`);
-                field.classList.add('input-error', 'border-red-500');
+            const event = new Event('blur');
+            field.dispatchEvent(event);
+            if (field.classList.contains('error')) {
                 isValid = false;
-            } else {
-                const event = new Event('blur');
-                field.dispatchEvent(event);
-                if (field.classList.contains('input-error')) {
-                    isValid = false;
-                }
             }
         });
 
@@ -162,12 +120,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function handleFormSubmit(e) {
         e.preventDefault();
         
-        console.log('Form submission attempted');
-        
         if (!validateForm()) {
-            console.log('Form validation failed');
             // Scroll to first error
-            const firstError = contactForm.querySelector('.input-error');
+            const firstError = contactForm.querySelector('.error');
             if (firstError) {
                 firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 firstError.focus();
@@ -175,30 +130,21 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        console.log('Form validation passed, submitting...');
-
         // Show loading state
         setLoadingState(true);
 
         // Submit form via FormSubmit
         const formData = new FormData(contactForm);
         
-        // Log form data for debugging
-        for (let [key, value] of formData.entries()) {
-            console.log(key + ': ' + value);
-        }
-        
         fetch(contactForm.action, {
             method: 'POST',
             body: formData
         })
         .then(response => {
-            console.log('Form submission response:', response);
             if (response.ok) {
                 showSuccessMessage();
                 contactForm.reset();
                 resetFileList();
-                resetFormStyles();
                 // Track conversion in Google Analytics
                 if (typeof gtag !== 'undefined') {
                     gtag('event', 'generate_lead', {
@@ -207,14 +153,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                 }
             } else {
-                throw new Error('Form submission failed with status: ' + response.status);
+                throw new Error('Form submission failed');
             }
         })
         .catch(error => {
             console.error('Form submission error:', error);
-            // Fallback: allow natural form submission
-            console.log('Attempting natural form submission as fallback...');
-            contactForm.submit();
+            alert('Sorry, there was an error submitting your form. Please try again or contact us directly.');
         })
         .finally(() => {
             setLoadingState(false);
@@ -299,19 +243,6 @@ document.addEventListener('DOMContentLoaded', function() {
         clearError('fileError');
     }
 
-    function resetFormStyles() {
-        // Remove all success/error styles
-        const fields = contactForm.querySelectorAll('input, textarea, select');
-        fields.forEach(field => {
-            field.classList.remove('input-error', 'border-red-500', 'input-success', 'border-green-500');
-        });
-        
-        // Reset character counter
-        if (messageCounter) {
-            messageCounter.textContent = '0/1000 characters';
-        }
-    }
-
     // Utility functions
     function formatFileSize(bytes) {
         if (bytes === 0) return '0 Bytes';
@@ -326,6 +257,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (errorElement) {
             errorElement.textContent = message;
             errorElement.classList.remove('hidden');
+            const inputField = errorElement.previousElementSibling;
+            if (inputField) {
+                inputField.classList.add('border-red-500');
+                inputField.classList.remove('border-gray-300');
+            }
         }
     }
 
@@ -333,6 +269,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const errorElement = document.getElementById(elementId);
         if (errorElement) {
             errorElement.classList.add('hidden');
+            const inputField = errorElement.previousElementSibling;
+            if (inputField) {
+                inputField.classList.remove('border-red-500');
+                inputField.classList.add('border-gray-300');
+            }
         }
     }
 
