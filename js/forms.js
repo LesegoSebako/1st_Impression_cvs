@@ -358,3 +358,50 @@ document.addEventListener('DOMContentLoaded', function() {
     // Make removeFile function globally available
     window.removeFile = removeFile;
 });
+
+// Google Analytics form conversion tracking
+function trackFormConversion(formType) {
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'generate_lead', {
+            'event_category': 'Contact Form',
+            'event_label': formType,
+            'value': 1
+        });
+    }
+}
+
+// Track contact form submissions
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function() {
+            trackFormConversion('Contact Form Submission');
+        });
+    }
+    
+    // Track WhatsApp clicks
+    const whatsappLinks = document.querySelectorAll('a[href*="wa.me"]');
+    whatsappLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'contact', {
+                    'event_category': 'Contact Method',
+                    'event_label': 'WhatsApp Click'
+                });
+            }
+        });
+    });
+    
+    // Track service clicks
+    const serviceLinks = document.querySelectorAll('a[href*="#services"], .service-card a[href="#contact"]');
+    serviceLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'select_content', {
+                    'event_category': 'Navigation',
+                    'event_label': 'Service Interest - ' + this.textContent.trim()
+                });
+            }
+        });
+    });
+});
