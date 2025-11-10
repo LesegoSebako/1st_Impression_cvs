@@ -553,10 +553,6 @@ html {
     border-color: #ef4444;
 }
 
-.border-green-500 {
-    border-color: #10b981;
-}
-
 .success-message {
     animation: slideDown 0.5s ease-out;
 }
@@ -585,15 +581,4 @@ html {
 @keyframes spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
-}
-
-/* Error state for inputs */
-.input-error {
-    border-color: #ef4444;
-    background-color: #fef2f2;
-}
-
-.input-success {
-    border-color: #10b981;
-    background-color: #f0fdf4;
 }
