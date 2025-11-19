@@ -355,6 +355,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Make removeFile function globally available
+    // RemoveFile function globally available
     window.removeFile = removeFile;
 });

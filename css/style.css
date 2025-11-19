@@ -582,3 +582,24 @@ html {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
+
+/* Validation Styles */
+.validation-field:invalid {
+    border-color: #ef4444;
+}
+
+.validation-field:valid {
+    border-color: #10b981;
+}
+
+.error-message {
+    transition: all 0.3s ease;
+}
+
+.border-red-500 {
+    border-color: #ef4444;
+}
+
+.bg-red-50 {
+    background-color: #fef2f2;
+}
